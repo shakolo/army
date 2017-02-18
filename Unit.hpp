@@ -1,15 +1,15 @@
-#ifndef UNIT_HPP
-#define UNIT_HPP
+//
+// Created by eVol on 19.02.2017.
+//
 
-#include <iostream>
+#ifndef ARMY_UNIT_HPP
+#define ARMY_UNIT_HPP
+
 
 class Unit {
-    private:
-        int state;
-        int ability;
-    public:
-        Unit();
-        ~Unit();
+public:
+    Unit();
 };
 
-#endif //UNIT_HPP
+
+#endif //ARMY_UNIT_HPP
