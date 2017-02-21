@@ -5,14 +5,18 @@
 #ifndef ARMY_UNIT_HPP
 #define ARMY_UNIT_HPP
 
+#include "State.hpp"
+#include "Ability.hpp"
 
 class Unit {
-    ptivate:
+    private:
         State* statement;
-
+        Ability* ability;
 
 public:
-    Unit();
+    Unit(State *statement, Ability *ability);
+
+    virtual ~Unit();
 };
 
 

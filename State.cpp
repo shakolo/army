@@ -4,9 +4,7 @@
 
 #include "State.hpp"
 
-State::State() {
-
-}
+State::State(int hp, int hpmax) : hp(hp), hpmax(hpmax) {}
 
 State::~State() {
 
@@ -19,3 +17,5 @@ int State::getHP() {
 int State::getHPM() {
     return hpmax;
 }
+
+

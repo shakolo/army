@@ -12,7 +12,7 @@ private:
     int hpmax;
 
 public:
-    State();
+    State(int hp, int hpmax);
 
     int getHP();
     int getHPM();

@@ -4,6 +4,10 @@
 #include <iostream>
 #include "Unit.hpp"
 
-Unit::Unit() {
-    std::cout << "Test - Army works on IDE" << std::endl;
+Unit::Unit(State *statement, Ability *ability) : statement(statement), ability(ability) {
+    std::cout << "Unit created" << std::endl;
+}
+
+Unit::~Unit() {
+
 }
