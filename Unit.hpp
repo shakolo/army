@@ -7,18 +7,19 @@
 
 #include "State.hpp"
 #include "Ability.hpp"
+#include <string>
 
 class Ability;
 class State;
 
 class Unit {
     private:
-        State* statement;
-        Ability* ability;
+    State* statement;
+    Ability* ability;
+    std::string name;
 
 public:
-    Unit(State *statement, Ability *ability);
-    Unit();
+    Unit(State *statement, Ability *ability, const std::string& name);
 
     State * getStatement();
     void setStatement(int);
@@ -26,6 +27,8 @@ public:
     void setAbility(int);
     virtual void attack(Unit& enemy);
     bool isAlive();
+    virtual std::string getName();
+    virtual void setName(const std::string& name);
     virtual ~Unit();
 };
 

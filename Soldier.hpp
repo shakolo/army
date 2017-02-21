@@ -8,16 +8,12 @@
 #include "Unit.hpp"
 
 class Soldier: public Unit {
-private:
-    std::string name;
-
 public:
 
     Soldier(const std::string &name);
 
     virtual ~Soldier();
 
-    const std::string &getName() const;
 };
 
 std::ostream &operator<<(std::ostream &out, Soldier &soldier);
