@@ -12,10 +12,12 @@ private:
     int hpmax;
 
 public:
-    State(int hp, int hpmax);
+    State(int hpmax);
 
     int getHP();
     int getHPM();
+
+    void setHP(int);
 
     virtual ~State();
 };

@@ -6,6 +6,8 @@
 #define ARMY_ABILITY_HPP
 
 
+#include "Unit.hpp"
+
 class Ability {
 private:
     int damage;
@@ -15,8 +17,8 @@ public:
 
     virtual ~Ability();
 
-private:
     int getDamage();
+
 
 };
 

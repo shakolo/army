@@ -11,3 +11,18 @@ Unit::Unit(State *statement, Ability *ability) : statement(statement), ability(a
 Unit::~Unit() {
 
 }
+
+
+
+State * Unit::getStatement() {
+    return statement;
+}
+Ability * Unit::getAbility() {
+    return ability;
+}
+
+void Unit::attack(Unit &enemy) {
+    int newHP = enemy.getStatement()->getHP() - this->getAbility()->getDamage();
+    enemy.getStatement()->setHP(newHP);
+}
+

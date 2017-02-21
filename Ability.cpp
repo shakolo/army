@@ -13,3 +13,4 @@ Ability::~Ability() {
 int Ability::getDamage() {
     return damage;
 }
+

@@ -8,6 +8,9 @@
 #include "State.hpp"
 #include "Ability.hpp"
 
+class Ability;
+class State;
+
 class Unit {
     private:
         State* statement;
@@ -15,7 +18,9 @@ class Unit {
 
 public:
     Unit(State *statement, Ability *ability);
-
+    State * getStatement();
+    Ability * getAbility();
+    virtual void attack(Unit& enemy);
     virtual ~Unit();
 };
 
