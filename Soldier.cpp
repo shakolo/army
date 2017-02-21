@@ -5,9 +5,7 @@
 #include <iostream>
 #include "Soldier.hpp"
 
-Soldier::Soldier(State *statement, Ability *ability, const std::string &name) : Unit(statement, ability), name(name) {
-    std::cout << "Create soldier: " << this->getName() <<std::endl;
-}
+
 
 const std::string &Soldier::getName() const {
     return name;
@@ -17,6 +15,11 @@ Soldier::~Soldier() {
 
 }
 
+Soldier::Soldier(const std::string &name) : name(name) {
+    this->setStatement(100);
+    this->setAbility(10);
+    std::cout << "Soldier created:" << this->getName() << std::endl;
+}
 
 std::ostream &operator<<(std::ostream &out, Soldier &soldier) {
     out << "Soldier name :" << soldier.getName() << std::endl;

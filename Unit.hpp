@@ -18,9 +18,14 @@ class Unit {
 
 public:
     Unit(State *statement, Ability *ability);
+    Unit();
+
     State * getStatement();
+    void setStatement(int);
     Ability * getAbility();
+    void setAbility(int);
     virtual void attack(Unit& enemy);
+    bool isAlive();
     virtual ~Unit();
 };
 

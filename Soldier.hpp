@@ -12,7 +12,8 @@ private:
     std::string name;
 
 public:
-    Soldier(State *statement, Ability *ability, const std::string &name);
+
+    Soldier(const std::string &name);
 
     virtual ~Soldier();
 
