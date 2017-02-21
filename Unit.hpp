@@ -7,6 +7,10 @@
 
 
 class Unit {
+    ptivate:
+        State* statement;
+
+
 public:
     Unit();
 };

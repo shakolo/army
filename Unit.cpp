@@ -5,5 +5,5 @@
 #include "Unit.hpp"
 
 Unit::Unit() {
-    std::cout << "Test" << std::endl;
+    std::cout << "Test - Army works on IDE" << std::endl;
 }
