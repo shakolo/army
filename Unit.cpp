@@ -30,6 +30,7 @@ void Unit::setAbility(int dmg) {
 
 
 void Unit::fight(Unit &enemy) {
+    std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
     enemy.getStatement()->isAlive();
     this->getAbility()->attack(&enemy);
     enemy.getAbility()->counterattack(this);

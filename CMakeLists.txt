@@ -3,5 +3,5 @@ project(army)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp Unit.cpp Unit.hpp State.cpp State.hpp Ability.cpp Ability.hpp Soldier.cpp Soldier.hpp)
+set(SOURCE_FILES main.cpp Unit.cpp Unit.hpp State.cpp State.hpp Ability.cpp Ability.hpp Soldier.cpp Soldier.hpp Rogue.cpp Rogue.hpp)
 add_executable(army ${SOURCE_FILES})
