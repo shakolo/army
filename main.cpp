@@ -2,6 +2,8 @@
 #include "Unit.hpp"
 #include "Soldier.hpp"
 #include "Rogue.hpp"
+#include "Berserker.hpp"
+
 
 int main() {
     Soldier* bob = new Soldier("Bob");
@@ -15,5 +17,12 @@ int main() {
     solovey->fight(*bob);
     std::cout<< *bob << std::endl;
     std::cout<< *solovey << std::endl;
+
+    Berserker* ivar = new Berserker("Ivar");
+    ivar->fight(*solovey);
+    solovey->fight(*ivar);
+
+    std::cout<< *solovey << std::endl;
+    std::cout<< *ivar << std::endl;
     return 0;
 }
