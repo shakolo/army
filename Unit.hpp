@@ -25,8 +25,8 @@ public:
     void setStatement(int);
     Ability * getAbility();
     void setAbility(int);
-    virtual void attack(Unit& enemy);
-    bool isAlive();
+    virtual void fight(Unit &enemy);
+
     virtual std::string getName();
     virtual void setName(const std::string& name);
     virtual ~Unit();

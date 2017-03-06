@@ -20,6 +20,8 @@ public:
     void setHP(int);
 
     virtual ~State();
+
+    bool isAlive();
 };
 
 

@@ -7,6 +7,7 @@
 
 
 #include "Unit.hpp"
+class Unit;
 
 class Ability {
 private:
@@ -15,9 +16,13 @@ private:
 public:
     Ability(int damage);
 
+    void attack(Unit*);
+    void counterattack(Unit*);
+
     virtual ~Ability();
 
     int getDamage();
+
 
 
 };

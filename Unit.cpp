@@ -12,8 +12,6 @@ Unit::~Unit() {
 
 }
 
-
-
 State * Unit::getStatement() {
     return statement;
 }
@@ -31,19 +29,13 @@ void Unit::setAbility(int dmg) {
 }
 
 
-void Unit::attack(Unit &enemy) {
-    if ( enemy.isAlive() ) {
-        int newHP = enemy.getStatement()->getHP() - this->getAbility()->getDamage();
-        enemy.getStatement()->setHP(newHP);
-    } else {
-        std::cout << "Enemy dead" << std::endl;
-    }
-
+void Unit::fight(Unit &enemy) {
+    enemy.getStatement()->isAlive();
+    this->getAbility()->attack(&enemy);
+    enemy.getAbility()->counterattack(this);
 }
 
-bool Unit::isAlive() {
-    return this->getStatement()->getHP() > 0;
-}
+
 
 std::string Unit::getName() {
     return this->name;
@@ -52,9 +44,3 @@ std::string Unit::getName() {
 void Unit::setName(const std::string& name) {
     this->name = name;
 }
-
-
-
-
-
-

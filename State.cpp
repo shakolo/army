@@ -3,6 +3,7 @@
 //
 
 #include "State.hpp"
+#include <iostream>
 
 State::State(int hpmax) : hpmax(hpmax) {
     hp = hpmax;
@@ -21,8 +22,16 @@ int State::getHPM() {
 }
 
 void State::setHP(int newHP) {
+    isAlive();
     this->hp = newHP;
 }
 
+bool State::isAlive() {
+    if ( hp <= 0 ) {
+       std::cout << "UnitDeadException()" << std::endl;
+        throw;
+    }
+    return hp > 0;
+}
 
 
