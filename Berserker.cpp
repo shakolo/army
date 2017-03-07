@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Berserker.hpp"
 
-Berserker::Berserker(const std::string &name): Unit(new State(100), new Ability(10), name ) {
+Berserker::Berserker(const std::string &name): Unit(new State(12), new Ability(10), name ) {
     std::cout << getName() << " is a Berserker" << std::endl;
 }
 

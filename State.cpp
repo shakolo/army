@@ -7,6 +7,7 @@
 
 State::State(int hpmax) : hpmax(hpmax) {
     hp = hpmax;
+    isVampire = false;
 }
 
 State::~State() {
@@ -23,15 +24,29 @@ int State::getHPM() {
 
 void State::setHP(int newHP) {
     isAlive();
-    this->hp = newHP;
+    if ( newHP <= hpmax ) {
+        this->hp = newHP;
+    } else {
+        this->hp = this->hpmax;
+    }
+    isAlive();
 }
 
 bool State::isAlive() {
     if ( hp <= 0 ) {
+        hp = 0;
        std::cout << "UnitDeadException()" << std::endl;
-        throw;
+        return false;
     }
     return hp > 0;
+}
+
+void State::setIsVampire() {
+    isVampire = true;
+}
+
+bool State::getIsVampire() {
+    return isVampire;
 }
 
 

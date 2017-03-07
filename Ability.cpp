@@ -21,7 +21,10 @@ void Ability::attack(Unit *target) {
     target->getStatement()->setHP(target->getStatement()->getHP() - damage);
 }
 
+
+
 void Ability::counterattack(Unit *target) {
+
     std::cout<<"counterattack"<<std::endl;
     target->getStatement()->setHP(target->getStatement()->getHP() - damage/2);
 }

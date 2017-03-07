@@ -30,10 +30,25 @@ void Unit::setAbility(int dmg) {
 
 
 void Unit::fight(Unit &enemy) {
+    std::cout<<std::endl;
     std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
     enemy.getStatement()->isAlive();
     this->getAbility()->attack(&enemy);
-    enemy.getAbility()->counterattack(this);
+
+    if (enemy.getStatement()->isAlive() && !enemy.getStatement()->getIsVampire()) {
+        enemy.getAbility()->counterattack(this);
+    }
+
+    if (enemy.getStatement()->isAlive() && enemy.getStatement()->getIsVampire()) {
+        std::cout<< "Vampire counterattacks!" << std::endl;
+        if ( (enemy.getAbility()->getDamage())/2 <= this->getStatement()->getHP() ){
+            enemy.getStatement()->setHP(enemy.getStatement()->getHP() + (enemy.getAbility()->getDamage())/2);
+            enemy.getAbility()->counterattack(this);
+        } else {
+            enemy.getStatement()->setHP(enemy.getStatement()->getHP() + this->getStatement()->getHP());
+            enemy.getAbility()->counterattack(this);
+        }
+    }
 }
 
 

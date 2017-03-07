@@ -10,14 +10,16 @@ class State {
 private:
     int hp;
     int hpmax;
+    bool isVampire;
 
 public:
     State(int hpmax);
 
     int getHP();
     int getHPM();
-
+    void setIsVampire();
     void setHP(int);
+    bool getIsVampire();
 
     virtual ~State();
 
