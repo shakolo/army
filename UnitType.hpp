@@ -5,6 +5,7 @@
 #ifndef ARMY_UNITTYPE_HPP
 #define ARMY_UNITTYPE_HPP
 #include <iostream>
+#include <map>
 
 /* - Soldier [Солдат] : юнит без всяких специальных возможностей
 - Rogue [Разбойник] : разбойника невозможно контратаковать
@@ -17,7 +18,6 @@
 - Warlock [Чернокнижник] : призывает демонов (класс Demon немного расширяет класс Soldier)
 - Necromancer [Некромант] : следит за всеми кого атаковал, в случае смерти атакованого юнита, получает часть его жизненных сил
  */
-
 
 class UnitType {
 private:

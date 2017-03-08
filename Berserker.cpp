@@ -4,8 +4,8 @@
 #include <iostream>
 #include "Berserker.hpp"
 
-Berserker::Berserker(const std::string &name): Unit(new State(20), new Ability(24), name ) {
-    std::cout << getName() << " is a Berserker" << std::endl;
+Berserker::Berserker(const std::string &name): Unit(new State(UnitTypes["Berserker"]->getHpmax()), new Ability(UnitTypes["Berserker"]->getDamage()), name ) {
+    std::cout << getName() << " is a " <<UnitTypes["Berserker"]->getNameUT() << std::endl;
     std::cout<<std::endl;
 }
 

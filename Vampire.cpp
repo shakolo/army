@@ -4,8 +4,8 @@
 #include <iostream>
 #include "Vampire.hpp"
 
-Vampire::Vampire(const std::string &name): Unit(new State(100), new Ability(16), name ) {
-    std::cout << getName() << " is a Vampire" << std::endl;
+Vampire::Vampire(const std::string &name): Unit(new State(UnitTypes["Vampire"]->getHpmax()), new Ability(UnitTypes["Vampire"]->getDamage()), name ) {
+    std::cout << getName() << " is a " << UnitTypes["Vampire"]->getNameUT() <<std::endl;
     this->getStatement()->setIsVampire();
     std::cout<<std::endl;
 }

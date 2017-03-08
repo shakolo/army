@@ -7,7 +7,6 @@
 #include <string>
 #include "Unit.hpp"
 
-
 class Soldier: public Unit {
 public:
 

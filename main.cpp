@@ -10,10 +10,10 @@
 int main() {
 
     Soldier* bob = new Soldier("Bob");
-//    Berserker* ivar = new Berserker("Ivar");
+    Berserker* ivar = new Berserker("Ivar");
 //    Soldier* john = new Soldier("John");
-//    Vampire *drakula = new Vampire("Drakula");
-//    Rogue* solovey = new Rogue("Solovey");
+    Vampire *drakula = new Vampire("Drakula");
+    Rogue* solovey = new Rogue("Solovey");
 //    std::cout<< *drakula << std::endl;
     std::cout<< *bob << std::endl;
 //    std::cout<< *solovey << std::endl;

@@ -32,8 +32,11 @@ public:
     virtual std::string getName();
     virtual void setName(const std::string& name);
     virtual ~Unit();
-    std::map<std::string, UnitType*>UnitTypes;
+
+    static std::map<std::string, UnitType*>UnitTypes;
 };
 std::ostream &operator<<(std::ostream &out, Unit &unit);
+
+//std::map<std::string, int>UnitTypes;
 
 #endif //ARMY_UNIT_HPP
