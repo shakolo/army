@@ -8,15 +8,17 @@
 Soldier::Soldier(const std::string &name)
         : Unit(new State(100), new Ability(10), name ) {
     std::cout << getName() << " is a Soldier" << std::endl;
+    std::cout<<std::endl;
 }
 
 Soldier::~Soldier() {
 
 }
 
-std::ostream &operator<<(std::ostream &out, Soldier &soldier) {
-    out << "Soldier name :" << soldier.getName() << std::endl;
-    out << "state hp: " << soldier.getStatement()->getHP() << std::endl;
-    out << "ability damage: " << soldier.getAbility()->getDamage() << std::endl;
-    return out;
-}
+//std::ostream &operator<<(std::ostream &out, Soldier &soldier) {
+//    out << "Soldier name: " << soldier.getName() << std::endl;
+//    out << "state hp: " << soldier.getStatement()->getHP() << std::endl;
+//    out << "ability damage: " << soldier.getAbility()->getDamage() << std::endl;
+//    out<< std::endl;
+//    return out;
+//}

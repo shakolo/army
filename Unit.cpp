@@ -49,6 +49,7 @@ void Unit::fight(Unit &enemy) {
             enemy.getAbility()->counterattack(this);
         }
     }
+    std::cout<<std::endl;
 }
 
 
@@ -59,4 +60,11 @@ std::string Unit::getName() {
 
 void Unit::setName(const std::string& name) {
     this->name = name;
+}
+std::ostream &operator<<(std::ostream &out, Unit &unit) {
+    out << "Unit name: " << unit.getName() << std::endl;
+    out << "state hp: " << unit.getStatement()->getHP() << std::endl;
+    out << "ability damage: " << unit.getAbility()->getDamage() << std::endl;
+    out<< std::endl;
+    return out;
 }

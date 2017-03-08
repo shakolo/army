@@ -4,9 +4,10 @@
 #include <iostream>
 #include "Vampire.hpp"
 
-Vampire::Vampire(const std::string &name): Unit(new State(100), new Ability(10), name ) {
+Vampire::Vampire(const std::string &name): Unit(new State(100), new Ability(16), name ) {
     std::cout << getName() << " is a Vampire" << std::endl;
     this->getStatement()->setIsVampire();
+    std::cout<<std::endl;
 }
 
 Vampire::~Vampire() {
@@ -19,8 +20,11 @@ void Vampire::fight(Unit &enemy) {
         if ( this->getAbility()->getDamage() <= enemy.getStatement()->getHP() ){
             this->getAbility()->attack(&enemy);
             this->getStatement()->setHP(this->getStatement()->getHP() + this->getAbility()->getDamage());
+            std::cout << this->getName() << " drinks +" << this->getAbility()->getDamage() << " of blood " <<  enemy.getName() << std::endl;
+
         } else {
             this->getStatement()->setHP(this->getStatement()->getHP() + enemy.getStatement()->getHP());
+            std::cout << this->getName() << " drinks +" << enemy.getStatement()->getHP() << " of blood " <<  enemy.getName() << std::endl;
             this->getAbility()->attack(&enemy);
         }
     }
@@ -28,12 +32,13 @@ void Vampire::fight(Unit &enemy) {
     if ( enemy.getStatement()->isAlive() ) {
         enemy.getAbility()->counterattack(this);
     }
-
+    std::cout<<std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, Vampire &vampire){
-    out << "Vampire name :" << vampire.getName() << std::endl;
+    out << "Vampire name: " << vampire.getName() << std::endl;
     out << "state hp: " << vampire.getStatement()->getHP() << std::endl;
     out << "ability damage: " << vampire.getAbility()->getDamage() << std::endl;
+    out<< std::endl;
     return out;
 }

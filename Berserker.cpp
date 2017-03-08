@@ -4,8 +4,9 @@
 #include <iostream>
 #include "Berserker.hpp"
 
-Berserker::Berserker(const std::string &name): Unit(new State(12), new Ability(10), name ) {
+Berserker::Berserker(const std::string &name): Unit(new State(20), new Ability(24), name ) {
     std::cout << getName() << " is a Berserker" << std::endl;
+    std::cout<<std::endl;
 }
 
 Berserker::~Berserker() {
@@ -13,8 +14,9 @@ Berserker::~Berserker() {
 }
 
 std::ostream &operator<<(std::ostream &out, Berserker &berserker) {
-    out << "Soldier name :" << berserker.getName() << std::endl;
+    out << "Berserker name: " << berserker.getName() << std::endl;
     out << "state hp: " << berserker.getStatement()->getHP() << std::endl;
     out << "ability damage: " << berserker.getAbility()->getDamage() << std::endl;
+    out<< std::endl;
     return out;
 }

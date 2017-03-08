@@ -16,6 +16,6 @@ public:
 
 };
 
-std::ostream &operator<<(std::ostream &out, Soldier &soldier);
+//std::ostream &operator<<(std::ostream &out, Soldier &soldier);
 
 #endif //ARMY_SOLDIER_HPP

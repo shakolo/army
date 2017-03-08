@@ -31,6 +31,6 @@ public:
     virtual void setName(const std::string& name);
     virtual ~Unit();
 };
-
+std::ostream &operator<<(std::ostream &out, Unit &unit);
 
 #endif //ARMY_UNIT_HPP

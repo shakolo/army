@@ -16,16 +16,14 @@ int Ability::getDamage() {
 }
 
 void Ability::attack(Unit *target) {
-    std::cout<<"attack"<<std::endl;
+    std::cout<<"attack: -"<< damage << " hp" << std::endl;
 
     target->getStatement()->setHP(target->getStatement()->getHP() - damage);
 }
 
-
-
 void Ability::counterattack(Unit *target) {
 
-    std::cout<<"counterattack"<<std::endl;
+    std::cout<<"counterattack: -"<< damage/2 << " hp" << std::endl;
     target->getStatement()->setHP(target->getStatement()->getHP() - damage/2);
 }
 
