@@ -4,10 +4,11 @@
 
 #include <iostream>
 #include "Soldier.hpp"
+#include "UnitType.hpp"
 
 Soldier::Soldier(const std::string &name)
         : Unit(new State(100), new Ability(10), name ) {
-    std::cout << getName() << " is a Soldier" << std::endl;
+    std::cout << getName() << " is a " << this->UnitTypes["Soldier"]->getNameUT() << std::endl;
     std::cout<<std::endl;
 }
 

@@ -5,7 +5,6 @@
 #ifndef ARMY_STATE_HPP
 #define ARMY_STATE_HPP
 
-
 class State {
 private:
     int hp;

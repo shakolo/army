@@ -7,7 +7,9 @@
 
 #include "State.hpp"
 #include "Ability.hpp"
+#include "UnitType.hpp"
 #include <string>
+#include <map>
 
 class Ability;
 class State;
@@ -30,6 +32,7 @@ public:
     virtual std::string getName();
     virtual void setName(const std::string& name);
     virtual ~Unit();
+    std::map<std::string, UnitType*>UnitTypes;
 };
 std::ostream &operator<<(std::ostream &out, Unit &unit);
 

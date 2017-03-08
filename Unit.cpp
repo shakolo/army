@@ -3,9 +3,11 @@
 //
 #include <iostream>
 #include "Unit.hpp"
+#include "UnitType.hpp"
 
 Unit::Unit(State *statement, Ability *ability, const std::string& name) : statement(statement), ability(ability), name(name) {
     std::cout << "Unit created: " << this->getName() << std::endl;
+    UnitTypes = {{"Soldier", new UnitType("Soldier", 10 , 10)}};
 }
 
 Unit::~Unit() {
@@ -61,6 +63,7 @@ std::string Unit::getName() {
 void Unit::setName(const std::string& name) {
     this->name = name;
 }
+
 std::ostream &operator<<(std::ostream &out, Unit &unit) {
     out << "Unit name: " << unit.getName() << std::endl;
     out << "state hp: " << unit.getStatement()->getHP() << std::endl;
@@ -68,3 +71,5 @@ std::ostream &operator<<(std::ostream &out, Unit &unit) {
     out<< std::endl;
     return out;
 }
+
+

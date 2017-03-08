@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Unit.hpp"
+//#include "UnitType.hpp"
 #include "Soldier.hpp"
 #include "Rogue.hpp"
 #include "Berserker.hpp"
@@ -7,6 +8,7 @@
 
 
 int main() {
+
     Soldier* bob = new Soldier("Bob");
 //    Berserker* ivar = new Berserker("Ivar");
 //    Soldier* john = new Soldier("John");
