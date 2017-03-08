@@ -14,5 +14,5 @@ public:
     virtual ~Vampire();
 };
 
-std::ostream &operator<<(std::ostream &out, Vampire &vampire);
+//std::ostream &operator<<(std::ostream &out, Vampire &vampire);
 #endif //ARMY_VAMPIRE_HPP

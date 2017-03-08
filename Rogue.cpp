@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Rogue.hpp"
 
-Rogue::Rogue(const std::string &name): Unit(new State(UnitTypes["Rogue"]->getHpmax()), new Ability(UnitTypes["Rogue"]->getDamage()), name) {
+Rogue::Rogue(const std::string &name): Unit(UnitTypes["Berserker"]->getNameUT(), new State(UnitTypes["Rogue"]->getHpmax()), new Ability(UnitTypes["Rogue"]->getDamage()), name) {
     std::cout << getName() << " is a " << UnitTypes["Rogue"]->getNameUT() << std::endl;
     std::cout<<std::endl;
 }
@@ -21,10 +21,10 @@ void Rogue::fight(Unit &enemy) {
     std::cout<<std::endl;
 }
 
-std::ostream &operator<<(std::ostream &out, Rogue &rogue) {
-    out << "Rogue name: " << rogue.getName() << std::endl;
-    out << "state hp: " << rogue.getStatement()->getHP() << std::endl;
-    out << "ability damage: " << rogue.getAbility()->getDamage() << std::endl;
-    out<< std::endl;
-    return out;
-}
+//std::ostream &operator<<(std::ostream &out, Rogue &rogue) {
+//    out << "Rogue name: " << rogue.getName() << std::endl;
+//    out << "state hp: " << rogue.getStatement()->getHP() << std::endl;
+//    out << "ability damage: " << rogue.getAbility()->getDamage() << std::endl;
+//    out<< std::endl;
+//    return out;
+//}

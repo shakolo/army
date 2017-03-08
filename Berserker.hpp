@@ -15,5 +15,5 @@ public:
     virtual ~Berserker();
 };
 
-std::ostream &operator<<(std::ostream &out, Berserker &berserker);
+//std::ostream &operator<<(std::ostream &out, Berserker &berserker);
 #endif //ARMY_BERSERKER_HPP

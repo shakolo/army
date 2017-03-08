@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Vampire.hpp"
 
-Vampire::Vampire(const std::string &name): Unit(new State(UnitTypes["Vampire"]->getHpmax()), new Ability(UnitTypes["Vampire"]->getDamage()), name ) {
+Vampire::Vampire(const std::string &name): Unit(UnitTypes["Berserker"]->getNameUT(), new State(UnitTypes["Vampire"]->getHpmax()), new Ability(UnitTypes["Vampire"]->getDamage()), name ) {
     std::cout << getName() << " is a " << UnitTypes["Vampire"]->getNameUT() <<std::endl;
     this->getStatement()->setIsVampire();
     std::cout<<std::endl;
@@ -35,10 +35,10 @@ void Vampire::fight(Unit &enemy) {
     std::cout<<std::endl;
 }
 
-std::ostream &operator<<(std::ostream &out, Vampire &vampire){
-    out << "Vampire name: " << vampire.getName() << std::endl;
-    out << "state hp: " << vampire.getStatement()->getHP() << std::endl;
-    out << "ability damage: " << vampire.getAbility()->getDamage() << std::endl;
-    out<< std::endl;
-    return out;
-}
+//std::ostream &operator<<(std::ostream &out, Vampire &vampire){
+//    out << "Vampire name: " << vampire.getName() << std::endl;
+//    out << "state hp: " << vampire.getStatement()->getHP() << std::endl;
+//    out << "ability damage: " << vampire.getAbility()->getDamage() << std::endl;
+//    out<< std::endl;
+//    return out;
+//}

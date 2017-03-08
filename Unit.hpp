@@ -19,9 +19,15 @@ class Unit {
     State* statement;
     Ability* ability;
     std::string name;
+    std::string type;
+public:
+    const std::string &getType() const;
 
 public:
-    Unit(State *statement, Ability *ability, const std::string& name);
+    void setType(const std::string &type);
+
+public:
+    Unit(const std::string& type, State *statement, Ability *ability, const std::string& name);
 
     State * getStatement();
     void setStatement(int);

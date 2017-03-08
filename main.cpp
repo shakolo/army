@@ -19,12 +19,12 @@ int main() {
 //    std::cout<< *solovey << std::endl;
 ////    std::cout<< *ivar << std::endl;
 //    solovey->fight(*drakula);
-//    std::cout<< *drakula << std::endl;
-//    std::cout<< *solovey << std::endl;
+    std::cout<< *drakula << std::endl;
+    std::cout<< *solovey << std::endl;
 //    drakula->fight(*solovey);
 //    std::cout<< *drakula << std::endl;
 //    std::cout<< *solovey << std::endl;
-//    std::cout<< *ivar << std::endl;
+    std::cout<< *ivar << std::endl;
 //
 //    std::cout<< *john << std::endl;
 //    bob->fight(*john);

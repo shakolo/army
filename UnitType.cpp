@@ -4,7 +4,7 @@
 
 #include "UnitType.hpp"
 
-UnitType::UnitType(const std::string &name, int hpmax, int damage) : name(name), hpmax(hpmax), damage(damage) {
+UnitType::UnitType(const std::string &name, int hpmax, int damage) : name(name), hpmax(hpmax), damage(damage), counterattackDivider(counterattackDivider) {
 
 }
 

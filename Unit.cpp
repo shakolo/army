@@ -5,9 +5,9 @@
 #include "Unit.hpp"
 
 std::map<std::string, UnitType*>Unit::UnitTypes = {{"Soldier",new UnitType("Soldier", 110, 14)},
-                                             {"Rogue", new UnitType("Rogue", 100, 10)},
-                                             {"Berserker", new UnitType("Berserker", 100, 10)},
-                                             {"Vampire", new UnitType("Vampire", 100, 10)},
+                                             {"Rogue", new UnitType("Rogue", 112, 12)},
+                                             {"Berserker", new UnitType("Berserker", 150, 16)},
+                                             {"Vampire", new UnitType("Vampire", 80, 10)},
                                              {"Werewolf", new UnitType("Werewolf", 100, 10)},
                                              {"Wizard", new UnitType("Wizard", 100, 10)},
                                              {"Healer", new UnitType("Healer", 100, 10)},
@@ -16,7 +16,7 @@ std::map<std::string, UnitType*>Unit::UnitTypes = {{"Soldier",new UnitType("Sold
                                              {"Necromancer", new UnitType("Necromancer", 100, 10)},
 };
 
-Unit::Unit(State *statement, Ability *ability, const std::string& name) : statement(statement), ability(ability), name(name) {
+Unit::Unit(const std::string& type, State *statement, Ability *ability, const std::string& name) : statement(statement), ability(ability), name(name), type(type) {
     std::cout << "Unit created: " << this->getName() << std::endl;
 }
 
@@ -74,9 +74,17 @@ void Unit::setName(const std::string& name) {
     this->name = name;
 }
 
+void Unit::setType(const std::string &type) {
+    Unit::type = type;
+}
+
+const std::string &Unit::getType() const {
+    return type;
+}
+
 std::ostream &operator<<(std::ostream &out, Unit &unit) {
     out << "Unit name: " << unit.getName() << std::endl;
-//    out << "Unit type: " << UnitTypes[this]->getNameUT() << std::endl;
+    out << "Unit type: " << unit.getType() << std::endl;
     out << "state hp: " << unit.getStatement()->getHP() << std::endl;
     out << "ability damage: " << unit.getAbility()->getDamage() << std::endl;
     out<< std::endl;
