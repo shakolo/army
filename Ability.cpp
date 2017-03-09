@@ -33,6 +33,7 @@ void Ability::counterattack(Unit* counterattacker, Unit* target){
 }
 
 void Ability::counterattackDefault(Unit *target) {
+    target->getStatement()->isAlive();
     target->getStatement()->setHP(target->getStatement()->getHP() - damage/2);
     std::cout<<"counterattack succes: " << target->getName() <<" lost -"<< damage/2 << " hp" << std::endl;
 }

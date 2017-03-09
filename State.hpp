@@ -4,6 +4,7 @@
 
 #ifndef ARMY_STATE_HPP
 #define ARMY_STATE_HPP
+#include "UnitIsDeadException.hpp"
 
 class State {
 private:
@@ -21,7 +22,7 @@ public:
     void setIsVampire();
     virtual ~State();
 
-    bool isAlive();
+    void isAlive();
     void setHpmax(int hpmax);
 };
 

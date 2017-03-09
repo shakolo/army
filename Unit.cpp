@@ -4,10 +4,10 @@
 #include <iostream>
 #include "Unit.hpp"
 
-std::map<std::string, UnitType*>Unit::UnitTypes = {{"Soldier",new UnitType("Soldier", 110, 14)},
+std::map<std::string, UnitType*>Unit::UnitTypes = {{"Soldier",new UnitType("Soldier", 20, 14)},
                                              {"Rogue", new UnitType("Rogue", 112, 12)},
-                                             {"Berserker", new UnitType("Berserker", 20, 16)},
-                                             {"Vampire", new UnitType("Vampire", 80, 10)},
+                                             {"Berserker", new UnitType("Berserker", 8, 16)},
+                                             {"Vampire", new UnitType("Vampire", 80, 20)},
                                              {"Werewolf", new UnitType("Werewolf", 100, 10)},
                                              {"Wizard", new UnitType("Wizard", 100, 10)},
                                              {"Healer", new UnitType("Healer", 100, 10)},

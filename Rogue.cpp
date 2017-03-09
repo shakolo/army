@@ -14,17 +14,9 @@ Rogue::~Rogue() {
 }
 
 void Rogue::fight(Unit &enemy) {
-    std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
-    enemy.getStatement()->isAlive();
-    this->getAbility()->attack(&enemy);
-//    enemy.getAbility()->counterattack(this);
-    std::cout<<std::endl;
+    this->getStatement()->isAlive();
+        std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
+        enemy.getStatement()->isAlive();
+        this->getAbility()->attack(&enemy);
+        std::cout << std::endl;
 }
-
-//std::ostream &operator<<(std::ostream &out, Rogue &rogue) {
-//    out << "Rogue name: " << rogue.getName() << std::endl;
-//    out << "state hp: " << rogue.getStatement()->getHP() << std::endl;
-//    out << "ability damage: " << rogue.getAbility()->getDamage() << std::endl;
-//    out<< std::endl;
-//    return out;
-//}

@@ -32,13 +32,12 @@ void State::setHP(int newHP) {
     isAlive();
 }
 
-bool State::isAlive() {
+void State::isAlive() {
     if ( hp <= 0 ) {
         hp = 0;
-       std::cout << "UnitDeadException()" << std::endl;
-        return false;
+        throw UnitIsDeadException("Yes, man is mortal, but it would not be so sad. The bad thing is that sometimes it is suddenly mortal.");
     }
-    return hp > 0;
+    //return hp > 0;
 }
 
 void State::setIsVampire() {
