@@ -6,6 +6,7 @@
 #define ARMY_VAMPIRE_HPP
 #include <string>
 #include "Unit.hpp"
+#include "AbilityVampire.hpp"
 
 class Vampire: public Unit {
 public:

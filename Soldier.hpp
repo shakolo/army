@@ -6,6 +6,7 @@
 #define ARMY_SOLDIER_HPP
 #include <string>
 #include "Unit.hpp"
+#include "AbilityDefault.hpp"
 
 class Soldier: public Unit {
 public:

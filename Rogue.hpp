@@ -5,6 +5,7 @@
 #ifndef ARMY_ROGUE_HPP
 #define ARMY_ROGUE_HPP
 #include "Unit.hpp"
+#include "AbilityDefault.hpp"
 
 class Rogue: public Unit {
 public:

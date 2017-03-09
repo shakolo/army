@@ -5,7 +5,6 @@
 #ifndef ARMY_ABILITY_HPP
 #define ARMY_ABILITY_HPP
 
-
 #include "Unit.hpp"
 
 class Unit;
@@ -13,23 +12,15 @@ class Unit;
 class Ability {
 private:
     int damage;
+    Unit* owner;
+
 public:
     void setDamage(int damage);
 
-public:
-    Ability(int damage);
+    Ability(Unit* owner, int damage);
 
-    void attack(Unit*,Unit*);
-
-    void attackVampire(Unit *attacker, Unit *target);
-
-    void counterattack(Unit* counterattacker, Unit* target);
-
-    void counterattackDefault(Unit*);
-
-    void counterattackVampire(Unit* counterattacker, Unit *target);
-
-    void infect(Unit &target);
+    virtual void attack(Unit*,Unit*) = 0;
+    virtual void counterattack(Unit*,Unit*) = 0;
 
     virtual ~Ability();
 
@@ -37,6 +28,5 @@ public:
 
 
 };
-
 
 #endif //ARMY_ABILITY_HPP

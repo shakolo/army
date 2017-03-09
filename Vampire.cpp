@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Vampire.hpp"
 
-Vampire::Vampire(const std::string &name): Unit(UnitTypes["Vampire"]->getNameUT(), new State(UnitTypes["Vampire"]->getHpmax()), new Ability(UnitTypes["Vampire"]->getDamage()), name ) {
+Vampire::Vampire(const std::string &name): Unit(UnitTypes["Vampire"]->getNameUT(), new State(UnitTypes["Vampire"]->getHpmax()), new AbilityVampire(this, UnitTypes["Vampire"]->getDamage()), name ) {
     std::cout << getName() << " is a " << getType() << std::endl;
     this->getStatement()->setIsVampire();
     std::cout<<std::endl;
@@ -19,7 +19,7 @@ void Vampire::fight(Unit &enemy) {
     this->getStatement()->isAlive();
     std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
 
-    this->getAbility()->attackVampire(this, &enemy);
+//    this->getAbility()->attackVampire(this, &enemy);
     enemy.getAbility()->counterattack(&enemy, this);
     std::cout << std::endl;
 }

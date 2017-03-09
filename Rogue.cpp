@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Rogue.hpp"
 
-Rogue::Rogue(const std::string &name): Unit(UnitTypes["Berserker"]->getNameUT(), new State(UnitTypes["Rogue"]->getHpmax()), new Ability(UnitTypes["Rogue"]->getDamage()), name) {
+Rogue::Rogue(const std::string &name): Unit(UnitTypes["Berserker"]->getNameUT(), new State(UnitTypes["Rogue"]->getHpmax()), new AbilityDefault(this, UnitTypes["Rogue"]->getDamage()), name) {
     std::cout << getName() << " is a " << UnitTypes["Rogue"]->getNameUT() << std::endl;
     std::cout<<std::endl;
 }

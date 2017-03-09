@@ -36,9 +36,9 @@ Ability * Unit::getAbility() {
     return ability;
 }
 
-void Unit::setAbility(int dmg) {
-    this->ability = new Ability(dmg);
-}
+//void Unit::setAbility(int dmg) {
+//    this->ability = new Ability(dmg);
+//}
 
 std::string Unit::getName() {
     return this->name;

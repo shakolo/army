@@ -6,6 +6,7 @@
 #define ARMY_BERSERKER_HPP
 #include <string>
 #include "Unit.hpp"
+#include "AbilityDefault.hpp"
 
 class Berserker: public Unit {
 public:
