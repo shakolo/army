@@ -10,32 +10,44 @@ void AbilityDefault::attack(Unit* attacker, Unit *target) {
     target->getStatement()->isAlive();
     attacker->getStatement()->isAlive();
 
-    if (!attacker->getStatement()->getIsVampire()) {
-        std::cout<< "attack succes: " << target->getName()<<" lost -"<< this->getDamage() << " hp" << std::endl;
+    std::cout<< "attack succes: " << target->getName()<<" lost -"<< this->getDamage() << " hp" << std::endl;
 
-        target->getStatement()->setHP(target->getStatement()->getHP() - this->getDamage());
-        target->getStatement()->isAlive();
-//        attacker->getAbility()->counterattack(target, attacker);
-    } else if (attacker->getStatement()->getIsVampire()) {
-//        attacker->getAbility()->attackVampire(attacker, target);
-    }
+    target->getStatement()->setHP(target->getStatement()->getHP() - this->getDamage());
 
+    target->getStatement()->isAlive();
+
+    this->counterattack(target,attacker);
 }
-//void AbilityDefault::counterattackDefault(Unit *target) {
-//    target->getStatement()->isAlive();
-//    target->getStatement()->setHP(target->getStatement()->getHP() - this->getDamage()/2);
-//    std::cout<<"counterattack succes: " << target->getName() <<" lost -"<< this->getDamage()/2 << " hp" << std::endl;
-//}
+
 void AbilityDefault::counterattack(Unit* counterattacker, Unit* target){
     target->getStatement()->isAlive();
+    counterattacker->getStatement()->isAlive();
+
     std::cout<<counterattacker->getName()<<" counterattack "<< target->getName() << std::endl;
 
     if (!counterattacker->getStatement()->getIsVampire()) {
-        target->getStatement()->setHP(target->getStatement()->getHP() - this->getDamage()/2);
+        this->counterattackDefault(counterattacker,target);
         std::cout<<"counterattack succes: " << target->getName() <<" lost -"<< this->getDamage()/2 << std::endl;
     } else if (counterattacker->getStatement()->getIsVampire()) {
-//        counterattacker->getAbility()->counterattackVampire(counterattacker,target);
+        this->counterattackVampire(counterattacker,target);
     }
 }
 
+void AbilityDefault::counterattackDefault(Unit* counterattacker, Unit* target) {
+    target->getStatement()->setHP(target->getStatement()->getHP() -  counterattacker->getAbility()->getDamage()/2);
+}
 
+void AbilityDefault::counterattackVampire(Unit* vampire, Unit *target) {
+    std::cout<< "Vampire counterattacks!" << std::endl;
+
+    if ( (vampire->getAbility()->getDamage())/2 <= target->getStatement()->getHP() ){
+        vampire->getStatement()->setHP(vampire->getStatement()->getHP() + (vampire->getAbility()->getDamage())/2);
+        std::cout << vampire->getName() << " drinks +" << (vampire->getAbility()->getDamage()/2) << " of blood " <<  target->getName() << std::endl;
+        this->counterattackDefault(vampire,target);
+    } else {
+        vampire->getStatement()->setHP(target->getStatement()->getHP() + vampire->getStatement()->getHP());
+        std::cout << vampire->getName() << " drinks +" << target->getStatement()->getHP() << " of blood " <<  target->getName() << std::endl;
+        this->counterattackDefault(vampire,target);
+    }
+
+}

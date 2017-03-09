@@ -4,10 +4,10 @@
 #include <iostream>
 #include "Unit.hpp"
 
-std::map<std::string, UnitType*>Unit::UnitTypes = {{"Soldier",new UnitType("Soldier", 20, 14)},
+std::map<std::string, UnitType*>Unit::UnitTypes = {{"Soldier",new UnitType("Soldier", 28, 14)},
                                              {"Rogue", new UnitType("Rogue", 112, 12)},
                                              {"Berserker", new UnitType("Berserker", 8, 16)},
-                                             {"Vampire", new UnitType("Vampire", 80, 20)},
+                                             {"Vampire", new UnitType("Vampire", 80, 24)},
                                              {"Werewolf", new UnitType("Werewolf", 100, 10)},
                                              {"Wizard", new UnitType("Wizard", 100, 10)},
                                              {"Healer", new UnitType("Healer", 100, 10)},
@@ -16,7 +16,12 @@ std::map<std::string, UnitType*>Unit::UnitTypes = {{"Soldier",new UnitType("Sold
                                              {"Necromancer", new UnitType("Necromancer", 100, 10)},
 };
 
-Unit::Unit(const std::string& type, State *statement, Ability *ability, const std::string& name) : statement(statement), ability(ability), name(name), type(type) {
+Unit::Unit(const std::string& type, State *statement, Ability *ability, const std::string& name) :
+        type(type),
+        statement(statement),
+        ability(ability),
+        name(name)
+{
     std::cout << "Unit created: " << this->getName() << std::endl;
 }
 

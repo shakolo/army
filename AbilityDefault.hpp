@@ -13,7 +13,8 @@ public:
     AbilityDefault(Unit*,int);
     void attack(Unit*,Unit*);
     void counterattack(Unit* counterattacker, Unit* target);
-    void counterattackDefault(Unit*);
+    void counterattackDefault(Unit* counterattacker, Unit* target);
+    void counterattackVampire(Unit* counterattacker, Unit* target);
 };
 
 

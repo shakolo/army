@@ -17,6 +17,4 @@ public:
 
 };
 
-//std::ostream &operator<<(std::ostream &out, Rogue &rogue);
-
 #endif //ARMY_ROGUE_HPP

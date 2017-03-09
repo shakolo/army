@@ -15,11 +15,10 @@ Soldier::Soldier(const std::string &name)
     std::cout<<std::endl;
 }
 void Soldier::fight(Unit &enemy) {
-        this->getStatement()->isAlive();
+        this->statement->isAlive();
         std::cout << std::endl;
         std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
-        this->getAbility()->attack(this, &enemy);
-        enemy.getAbility()->counterattack(&enemy, this);
+        this->ability->attack(this, &enemy);
         std::cout << std::endl;
 }
 Soldier::~Soldier() {

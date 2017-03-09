@@ -15,24 +15,24 @@ class Ability;
 class State;
 
 class Unit {
-    private:
-    State* statement;
-    Ability* ability;
+private:
     std::string name;
     std::string type;
+protected:
+    State* statement;
+    Ability* ability;
+
 public:
     const std::string &getType() const;
 
-public:
     void setType(const std::string &type);
 
-public:
     Unit(const std::string& type, State *statement, Ability *ability, const std::string& name);
 
     State * getStatement();
     void setStatement(int);
     Ability * getAbility();
-    void setAbility(int);
+//    void setAbility(int);
     virtual void fight(Unit &enemy) = 0 ;
 
     virtual std::string getName();

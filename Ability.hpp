@@ -10,7 +10,7 @@
 class Unit;
 
 class Ability {
-private:
+protected:
     int damage;
     Unit* owner;
 
@@ -21,6 +21,8 @@ public:
 
     virtual void attack(Unit*,Unit*) = 0;
     virtual void counterattack(Unit*,Unit*) = 0;
+//    virtual void counterattackVampire(Unit*,Unit*) = 0;
+//    virtual void counterattackDefault(Unit*,Unit*) = 0;
 
     virtual ~Ability();
 

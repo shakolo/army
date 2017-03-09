@@ -6,15 +6,14 @@
 #define ARMY_VAMPIRE_HPP
 #include <string>
 #include "Unit.hpp"
+//#include "AbilityDefault.hpp"
 #include "AbilityVampire.hpp"
 
 class Vampire: public Unit {
 public:
     Vampire(const std::string &name);
     void fight(Unit&);
-//    void infect(Unit&);
     virtual ~Vampire();
 };
 
-//std::ostream &operator<<(std::ostream &out, Vampire &vampire);
 #endif //ARMY_VAMPIRE_HPP

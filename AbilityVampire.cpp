@@ -23,27 +23,19 @@ void AbilityVampire::attack(Unit *attacker, Unit *target) {
 
         target->getStatement()->setHP(target->getStatement()->getHP() - this->getDamage());
     }
+    this->counterattack(target, attacker);
 }
 
 
-void AbilityVampire::counterattack(Unit* vampire, Unit *target) {
-    std::cout<< "Vampire counterattacks!" << std::endl;
-    if ( (vampire->getAbility()->getDamage())/2 <= target->getStatement()->getHP() ){
-        vampire->getStatement()->setHP(vampire->getStatement()->getHP() + (vampire->getAbility()->getDamage())/2);
-        std::cout << vampire->getName() << " drinks +" << (vampire->getAbility()->getDamage()/2) << " of blood " <<  target->getName() << std::endl;
-//        vampire->getAbility()->counterattackDefault(target);
-    } else {
-        vampire->getStatement()->setHP(target->getStatement()->getHP() + vampire->getStatement()->getHP());
-        std::cout << vampire->getName() << " drinks +" << target->getStatement()->getHP() << " of blood " <<  target->getName() << std::endl;
+void AbilityVampire::counterattack(Unit* attacker, Unit *target) {
+    attacker->getAbility()->counterattack(attacker,target);
+}
 
-//        vampire->getAbility()->counterattackDefault(target);
-    }
-}
-void AbilityVampire::infect(Unit &target) {
-    std::cout << "Infect!" << std::endl;
-    target.setType(target.UnitTypes["Vampire"]->getNameUT());
-    target.getStatement()->setHpmax(target.UnitTypes["Vampire"]->getHpmax());
-    target.getAbility()->setDamage(target.UnitTypes["Vampire"]->getDamage());
-    target.getStatement()->setIsVampire();
-}
+//void AbilityVampire::infect(Unit& infecter, Unit &target) {
+//    std::cout << "Infect!" << std::endl;
+//    target.setType(target.UnitTypes["Vampire"]->getNameUT());
+//    target.getStatement()->setHpmax(target.UnitTypes["Vampire"]->getHpmax());
+//    target.getAbility()->setDamage(target.UnitTypes["Vampire"]->getDamage());
+//    target.getStatement()->setIsVampire();
+//}
 
