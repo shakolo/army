@@ -32,7 +32,7 @@ public:
     State * getStatement();
     void setStatement(int);
     Ability * getAbility();
-//    void setAbility(int);
+    void setAbility(Ability*);
     virtual void fight(Unit &enemy) = 0 ;
 
     virtual std::string getName();

@@ -72,28 +72,34 @@ int main() {
 //    }
 //    std::cout<< *bob << std::endl;
 //    std::cout<< *drakula << std::endl;
-try {
-    std::cout<< *drakula << std::endl;
-    std::cout<< *bob << std::endl;
-        drakula->fight(*bob);
-        std::cout<< *drakula << std::endl;
-        std::cout<< *bob << std::endl;
-    bob->fight(*drakula);
-
-    } catch (UnitIsDeadException& e) {
-        std::cout << "Standard exception: "<< e.message << std::endl;
-}
-    std::cout<< *drakula << std::endl;
-    std::cout<< *bob << std::endl;
-//    try {
-//        bob->getAbility()->infect(*drakula);
-//        std::cout<< *drakula << std::endl;
-//        std::cout<< *bob << std::endl;
-//    } catch (UnitIsDeadException& e) {
-//        std::cout << "Standard exception: "<< e.message << std::endl;
-//    }
-
+//try {
 //    std::cout<< *drakula << std::endl;
 //    std::cout<< *bob << std::endl;
+//        drakula->fight(*bob);
+//    } catch (UnitIsDeadException& e) {
+//        std::cout << "Standard exception: "<< e.message << std::endl;
+//}
+    std::cout<< *drakula << std::endl;
+    std::cout<< *bob << std::endl;
+    bob->fight(*drakula);
+    std::cout<< *drakula << std::endl;
+    std::cout<< *bob << std::endl;
+//    bob->setAbility(new AbilityVampire(bob, 24));
+
+    try {
+//        bob->getAbility()->infect(*drakula);
+drakula->fight(*bob);
+        std::cout<< *drakula << std::endl;
+
+        std::cout<< *bob << std::endl;
+    } catch (UnitIsDeadException& e) {
+        std::cout << "Standard exception: "<< e.message << std::endl;
+    }
+
+    std::cout<< *drakula << std::endl;
+    std::cout<< *bob << std::endl;
+    bob->fight(*drakula);
+    std::cout<< *drakula << std::endl;
+    std::cout<< *bob << std::endl;
     return 0;
 }

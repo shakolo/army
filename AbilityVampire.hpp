@@ -13,7 +13,8 @@ public:
     AbilityVampire(Unit *owner, int damage);
     void attack(Unit *attacker, Unit *target);
     void counterattack(Unit* counterattacker, Unit *target);
-//    void infect(Unit& infecter, Unit &target);
+    void counterattackDefault(Unit* counterattacker, Unit *target);
+    void infect(Unit *attacker, Unit* target);
 };
 
 

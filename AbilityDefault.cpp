@@ -49,5 +49,4 @@ void AbilityDefault::counterattackVampire(Unit* vampire, Unit *target) {
         std::cout << vampire->getName() << " drinks +" << target->getStatement()->getHP() << " of blood " <<  target->getName() << std::endl;
         this->counterattackDefault(vampire,target);
     }
-
 }

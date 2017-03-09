@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Unit.hpp"
 
-std::map<std::string, UnitType*>Unit::UnitTypes = {{"Soldier",new UnitType("Soldier", 28, 14)},
+std::map<std::string, UnitType*>Unit::UnitTypes = {{"Soldier",new UnitType("Soldier", 48, 14)},
                                              {"Rogue", new UnitType("Rogue", 112, 12)},
                                              {"Berserker", new UnitType("Berserker", 8, 16)},
                                              {"Vampire", new UnitType("Vampire", 80, 24)},
@@ -41,9 +41,12 @@ Ability * Unit::getAbility() {
     return ability;
 }
 
-//void Unit::setAbility(int dmg) {
-//    this->ability = new Ability(dmg);
-//}
+void Unit::setAbility(Ability* newAbility) {
+    if( this->ability != NULL ) {
+        delete this->ability;
+    }
+    this->ability = newAbility;
+}
 
 std::string Unit::getName() {
     return this->name;
