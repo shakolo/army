@@ -14,6 +14,7 @@ Soldier::Soldier(const std::string &name)
     std::cout << getName() << " is a " << getType() << std::endl;
     std::cout<<std::endl;
 }
+
 void Soldier::fight(Unit &enemy) {
         this->statement->isAlive();
         std::cout << std::endl;
@@ -21,6 +22,7 @@ void Soldier::fight(Unit &enemy) {
         this->ability->attack(this, &enemy);
         std::cout << std::endl;
 }
+
 Soldier::~Soldier() {
 
 }

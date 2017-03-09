@@ -30,7 +30,6 @@ void AbilityVampire::attack(Unit *attacker, Unit *target) {
     }
 }
 
-
 void AbilityVampire::counterattack(Unit* attacker, Unit *target) {
     std::cout<< "Infected Vampire counterattacks!" << std::endl;
 

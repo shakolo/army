@@ -4,9 +4,9 @@
 
 #ifndef ARMY_ABILITYDEFAULT_HPP
 #define ARMY_ABILITYDEFAULT_HPP
-
-#include "Ability.hpp"
 #include "Unit.hpp"
+#include "Ability.hpp"
+
 
 class AbilityDefault: public Ability {
 public:
