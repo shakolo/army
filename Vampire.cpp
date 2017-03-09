@@ -17,30 +17,14 @@ Vampire::~Vampire() {
 void Vampire::fight(Unit &enemy) {
 
     this->getStatement()->isAlive();
-        std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
-            if (this->getAbility()->getDamage() <= enemy.getStatement()->getHP()) {
-                this->getAbility()->attack(&enemy);
-                this->getStatement()->setHP(this->getStatement()->getHP() + this->getAbility()->getDamage());
-                std::cout << this->getName() << " drinks +" << this->getAbility()->getDamage() << " of blood "
-                          << enemy.getName() << std::endl;
+    std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
 
-            } else {
-                this->getStatement()->setHP(this->getStatement()->getHP() + enemy.getStatement()->getHP());
-                std::cout << this->getName() << " drinks +" << enemy.getStatement()->getHP() << " of blood "
-                          << enemy.getName() << std::endl;
-                this->getAbility()->attack(&enemy);
-            }
-
-            enemy.getAbility()->counterattack(&enemy, this);
-        std::cout << std::endl;
+    this->getAbility()->attackVampire(this, &enemy);
+    enemy.getAbility()->counterattack(&enemy, this);
+    std::cout << std::endl;
 }
 
-void Vampire::infect(Unit &target) {
-    target.setType(UnitTypes["Vampire"]->getNameUT());
-    target.getStatement()->setHpmax(UnitTypes["Vampire"]->getHpmax());
-    target.getAbility()->setDamage(UnitTypes["Vampire"]->getDamage());
-    target.getStatement()->setIsVampire();
-}
+
 
 //std::ostream &operator<<(std::ostream &out, Vampire &vampire){
 //    out << "Vampire name: " << vampire.getName() << std::endl;

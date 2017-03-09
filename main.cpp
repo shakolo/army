@@ -11,11 +11,11 @@ int main() {
 
     Soldier* bob = new Soldier("Bob");
 //    Berserker* ivar = new Berserker("Ivar");
-    Soldier* john = new Soldier("John");
-//    Vampire *drakula = new Vampire("Drakula");
+//    Soldier* john = new Soldier("John");
+    Vampire *drakula = new Vampire("Drakula");
 //    Rogue* solovey = new Rogue("Solovey");
 //    std::cout<< *drakula << std::endl;
-    std::cout<< *bob << std::endl;
+//    std::cout<< *bob << std::endl;
 //    std::cout<< *solovey << std::endl;
 //    std::cout<< *ivar << std::endl;
 //    solovey->fight(*drakula);
@@ -26,7 +26,7 @@ int main() {
 //    std::cout<< *solovey << std::endl;
 //    std::cout<< *ivar << std::endl;
 //
-    std::cout<< *john << std::endl;
+//    std::cout<< *john << std::endl;
 
 
 
@@ -54,28 +54,38 @@ int main() {
 //    solovey->fight(*drakula);
 //    std::cout<< *drakula << std::endl;
 //    std::cout<< *solovey << std::endl;
-try {
-    bob->fight(*john);
-    std::cout<< *john << std::endl;
+//try {
+//    bob->fight(*john);
+//    std::cout<< *john << std::endl;
+//    std::cout<< *bob << std::endl;
+//} catch (UnitIsDeadException& e) {
+//    std::cout << "Standard exception: "<< e.message << std::endl;
+//}
+//    try {
+//        john->fight(*bob);
+//        std::cout<< *john << std::endl;
+//        std::cout<< *bob << std::endl;
+//    } catch (UnitIsDeadException& e) {
+//        std::cout << "Standard exception: "<< e.message << std::endl;
+//    }
     std::cout<< *bob << std::endl;
-} catch (UnitIsDeadException& e) {
-    std::cout << "Standard exception: "<< e.message << std::endl;
-}
+    std::cout<< *drakula << std::endl;
 try {
-       john->fight(*bob);
-    std::cout<< *john << std::endl;
-    std::cout<< *bob << std::endl;
-} catch (UnitIsDeadException& e) {
+        bob->fight(*drakula);
+        std::cout<< *drakula << std::endl;
+        std::cout<< *bob << std::endl;
+    } catch (UnitIsDeadException& e) {
         std::cout << "Standard exception: "<< e.message << std::endl;
 }
     try {
-        bob->fight(*john);
-        std::cout<< *john << std::endl;
+        drakula->getAbility()->infect(*bob);
+        std::cout<< *drakula << std::endl;
         std::cout<< *bob << std::endl;
     } catch (UnitIsDeadException& e) {
         std::cout << "Standard exception: "<< e.message << std::endl;
     }
-    std::cout<< *john << std::endl;
-    std::cout<< *bob << std::endl;
+
+//    std::cout<< *drakula << std::endl;
+//    std::cout<< *bob << std::endl;
     return 0;
 }

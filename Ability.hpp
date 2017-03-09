@@ -7,6 +7,7 @@
 
 
 #include "Unit.hpp"
+
 class Unit;
 
 class Ability {
@@ -18,17 +19,22 @@ public:
 public:
     Ability(int damage);
 
-    void attack(Unit*);
+    void attack(Unit*,Unit*);
+
+    void attackVampire(Unit *attacker, Unit *target);
 
     void counterattack(Unit* counterattacker, Unit* target);
 
     void counterattackDefault(Unit*);
 
-    void counterattackVampire(Unit* vampire, Unit *target);
+    void counterattackVampire(Unit* counterattacker, Unit *target);
+
+    void infect(Unit &target);
 
     virtual ~Ability();
 
     int getDamage();
+
 
 };
 

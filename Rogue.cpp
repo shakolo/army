@@ -15,8 +15,8 @@ Rogue::~Rogue() {
 
 void Rogue::fight(Unit &enemy) {
     this->getStatement()->isAlive();
-        std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
-        enemy.getStatement()->isAlive();
-        this->getAbility()->attack(&enemy);
-        std::cout << std::endl;
+    std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
+    enemy.getStatement()->isAlive();
+    this->getAbility()->attack(this, &enemy);
+    std::cout << std::endl;
 }

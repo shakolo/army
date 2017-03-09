@@ -15,11 +15,36 @@ int Ability::getDamage() {
     return damage;
 }
 
-void Ability::attack(Unit *target) {
+void Ability::attack(Unit* attacker, Unit *target) {
     target->getStatement()->isAlive();
-    std::cout<< "attack succes: " << target->getName()<<" lost -"<< damage << " hp" << std::endl;
+    attacker->getStatement()->isAlive();
+ if (!attacker->getStatement()->getIsVampire()) {
+     std::cout<< "attack succes: " << target->getName()<<" lost -"<< damage << " hp" << std::endl;
 
-    target->getStatement()->setHP(target->getStatement()->getHP() - damage);
+     target->getStatement()->setHP(target->getStatement()->getHP() - damage);
+ } else if (attacker->getStatement()->getIsVampire()) {
+     attacker->getAbility()->attackVampire(attacker, target);
+ }
+
+}
+
+void Ability::attackVampire(Unit *attacker, Unit *target) {
+    std::cout<< "attackVampire succes: " << target->getName()<<" lost -"<< damage << " hp" << std::endl;
+    if (attacker->getAbility()->getDamage() <=  target->getStatement()->getHP()) {
+
+        target->getStatement()->setHP(target->getStatement()->getHP() - damage);
+
+        attacker->getStatement()->setHP(attacker->getStatement()->getHP() + attacker->getAbility()->getDamage());
+        std::cout << attacker->getName() << " drinks +" << attacker->getAbility()->getDamage() << " of blood "
+                  <<  target->getName() << std::endl;
+
+    } else {
+        attacker->getStatement()->setHP(attacker->getStatement()->getHP() +  target->getStatement()->getHP());
+        std::cout << attacker->getName() << " drinks +" <<  target->getStatement()->getHP() << " of blood "
+                  <<  target->getName() << std::endl;
+
+        target->getStatement()->setHP(target->getStatement()->getHP() - damage);
+    }
 }
 
 void Ability::counterattack(Unit* counterattacker, Unit* target){
@@ -51,7 +76,14 @@ void Ability::counterattackVampire(Unit* vampire, Unit *target) {
         vampire->getAbility()->counterattackDefault(target);
     }
 }
+void Ability::infect(Unit &target) {
+    target.setType(target.UnitTypes["Vampire"]->getNameUT());
+    target.getStatement()->setHpmax(target.UnitTypes["Vampire"]->getHpmax());
+    target.getAbility()->setDamage(target.UnitTypes["Vampire"]->getDamage());
+    target.getStatement()->setIsVampire();
+}
 
 void Ability::setDamage(int damage) {
     Ability::damage = damage;
 }
+

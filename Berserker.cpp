@@ -12,7 +12,7 @@ void Berserker::fight(Unit &enemy) {
     this->getStatement()->isAlive();
         std::cout<<std::endl;
         std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
-        this->getAbility()->attack(&enemy);
+        this->getAbility()->attack(this, &enemy);
         enemy.getAbility()->counterattack(&enemy, this);
         std::cout<<std::endl;
 }
