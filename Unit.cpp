@@ -6,7 +6,7 @@
 
 std::map<std::string, UnitType*>Unit::UnitTypes = {{"Soldier",new UnitType("Soldier", 110, 14)},
                                              {"Rogue", new UnitType("Rogue", 112, 12)},
-                                             {"Berserker", new UnitType("Berserker", 150, 16)},
+                                             {"Berserker", new UnitType("Berserker", 20, 16)},
                                              {"Vampire", new UnitType("Vampire", 80, 10)},
                                              {"Werewolf", new UnitType("Werewolf", 100, 10)},
                                              {"Wizard", new UnitType("Wizard", 100, 10)},
@@ -39,32 +39,6 @@ Ability * Unit::getAbility() {
 void Unit::setAbility(int dmg) {
     this->ability = new Ability(dmg);
 }
-
-
-void Unit::fight(Unit &enemy) {
-    std::cout<<std::endl;
-    std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
-    enemy.getStatement()->isAlive();
-    this->getAbility()->attack(&enemy);
-
-    if (enemy.getStatement()->isAlive() && !enemy.getStatement()->getIsVampire()) {
-        enemy.getAbility()->counterattack(this);
-    }
-
-    if (enemy.getStatement()->isAlive() && enemy.getStatement()->getIsVampire()) {
-        std::cout<< "Vampire counterattacks!" << std::endl;
-        if ( (enemy.getAbility()->getDamage())/2 <= this->getStatement()->getHP() ){
-            enemy.getStatement()->setHP(enemy.getStatement()->getHP() + (enemy.getAbility()->getDamage())/2);
-            enemy.getAbility()->counterattack(this);
-        } else {
-            enemy.getStatement()->setHP(enemy.getStatement()->getHP() + this->getStatement()->getHP());
-            enemy.getAbility()->counterattack(this);
-        }
-    }
-    std::cout<<std::endl;
-}
-
-
 
 std::string Unit::getName() {
     return this->name;

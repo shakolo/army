@@ -11,7 +11,7 @@ class Berserker: public Unit {
 public:
 
     Berserker(const std::string &name);
-
+    void fight(Unit &enemy);
     virtual ~Berserker();
 };
 

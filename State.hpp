@@ -10,19 +10,19 @@ private:
     int hp;
     int hpmax;
     bool isVampire;
-
 public:
     State(int hpmax);
 
     int getHP();
     int getHPM();
-    void setIsVampire();
+
     void setHP(int);
     bool getIsVampire();
-
+    void setIsVampire();
     virtual ~State();
 
     bool isAlive();
+    void setHpmax(int hpmax);
 };
 
 

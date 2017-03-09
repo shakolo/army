@@ -12,12 +12,19 @@ class Unit;
 class Ability {
 private:
     int damage;
+public:
+    void setDamage(int damage);
 
 public:
     Ability(int damage);
 
     void attack(Unit*);
-    void counterattack(Unit*);
+
+    void counterattack(Unit* counterattacker, Unit* target);
+
+    void counterattackDefault(Unit*);
+
+    void counterattackVampire(Unit* vampire, Unit *target);
 
     virtual ~Ability();
 

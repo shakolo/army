@@ -4,8 +4,8 @@
 #include <iostream>
 #include "Vampire.hpp"
 
-Vampire::Vampire(const std::string &name): Unit(UnitTypes["Berserker"]->getNameUT(), new State(UnitTypes["Vampire"]->getHpmax()), new Ability(UnitTypes["Vampire"]->getDamage()), name ) {
-    std::cout << getName() << " is a " << UnitTypes["Vampire"]->getNameUT() <<std::endl;
+Vampire::Vampire(const std::string &name): Unit(UnitTypes["Vampire"]->getNameUT(), new State(UnitTypes["Vampire"]->getHpmax()), new Ability(UnitTypes["Vampire"]->getDamage()), name ) {
+    std::cout << getName() << " is a " << getType() << std::endl;
     this->getStatement()->setIsVampire();
     std::cout<<std::endl;
 }
@@ -30,9 +30,16 @@ void Vampire::fight(Unit &enemy) {
     }
 
     if ( enemy.getStatement()->isAlive() ) {
-        enemy.getAbility()->counterattack(this);
+        enemy.getAbility()->counterattack(&enemy, this);
     }
     std::cout<<std::endl;
+}
+
+void Vampire::infect(Unit &target) {
+    target.setType(UnitTypes["Vampire"]->getNameUT());
+    target.getStatement()->setHpmax(UnitTypes["Vampire"]->getHpmax());
+    target.getAbility()->setDamage(UnitTypes["Vampire"]->getDamage());
+    target.getStatement()->setIsVampire();
 }
 
 //std::ostream &operator<<(std::ostream &out, Vampire &vampire){

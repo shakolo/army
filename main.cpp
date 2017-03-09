@@ -9,22 +9,22 @@
 
 int main() {
 
-    Soldier* bob = new Soldier("Bob");
+//    Soldier* bob = new Soldier("Bob");
     Berserker* ivar = new Berserker("Ivar");
 //    Soldier* john = new Soldier("John");
     Vampire *drakula = new Vampire("Drakula");
-    Rogue* solovey = new Rogue("Solovey");
-//    std::cout<< *drakula << std::endl;
-    std::cout<< *bob << std::endl;
-//    std::cout<< *solovey << std::endl;
-////    std::cout<< *ivar << std::endl;
-//    solovey->fight(*drakula);
+//    Rogue* solovey = new Rogue("Solovey");
     std::cout<< *drakula << std::endl;
-    std::cout<< *solovey << std::endl;
+//    std::cout<< *bob << std::endl;
+//    std::cout<< *solovey << std::endl;
+    std::cout<< *ivar << std::endl;
+//    solovey->fight(*drakula);
+//    std::cout<< *drakula << std::endl;
+//    std::cout<< *solovey << std::endl;
 //    drakula->fight(*solovey);
 //    std::cout<< *drakula << std::endl;
 //    std::cout<< *solovey << std::endl;
-    std::cout<< *ivar << std::endl;
+//    std::cout<< *ivar << std::endl;
 //
 //    std::cout<< *john << std::endl;
 //    bob->fight(*john);
@@ -43,13 +43,13 @@ int main() {
 
 
 
-//    ivar->fight(*drakula);
-//    std::cout<< *drakula << std::endl;
-//    std::cout<< *ivar << std::endl;
-//    drakula->fight(*ivar);
+    ivar->fight(*drakula);
+    std::cout<< *drakula << std::endl;
+    std::cout<< *ivar << std::endl;
+    drakula->fight(*ivar);
 //
-//    std::cout<< *drakula << std::endl;
-//    std::cout<< *ivar << std::endl;
+    std::cout<< *drakula << std::endl;
+    std::cout<< *ivar << std::endl;
 
 //    solovey->fight(*drakula);
 //    std::cout<< *drakula << std::endl;

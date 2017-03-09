@@ -49,4 +49,8 @@ bool State::getIsVampire() {
     return isVampire;
 }
 
+void State::setHpmax(int hpmax) {
+    State::hpmax = hpmax;
+}
+
 

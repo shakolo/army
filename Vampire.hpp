@@ -11,6 +11,7 @@ class Vampire: public Unit {
 public:
     Vampire(const std::string &name);
     void fight(Unit&);
+    void infect(Unit&);
     virtual ~Vampire();
 };
 
