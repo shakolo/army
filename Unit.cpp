@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Unit.hpp"
 
-std::map<std::string, UnitType*>Unit::UnitTypes = {{"Soldier",new UnitType("Soldier", 48, 14)},
+std::map<std::string, UnitType*>Unit::UnitTypes = {{"Soldier",new UnitType("Soldier", 60, 14)},
                                              {"Rogue", new UnitType("Rogue", 112, 12)},
                                              {"Berserker", new UnitType("Berserker", 8, 16)},
                                              {"Vampire", new UnitType("Vampire", 80, 24)},
@@ -64,11 +64,17 @@ const std::string &Unit::getType() const {
     return type;
 }
 
+void Unit::bite(Unit &enemy) {
+    std::cout << this->getName() << " bites " << enemy.getName() << std::endl;
+    this->getAbility()->infect(this, &enemy);
+}
+
 std::ostream &operator<<(std::ostream &out, Unit &unit) {
     out << "Unit name: " << unit.getName() << std::endl;
     out << "Unit type: " << unit.getType() << std::endl;
     out << "state hp: " << unit.getStatement()->getHP() << std::endl;
     out << "ability damage: " << unit.getAbility()->getDamage() << std::endl;
+    out << "isVampire " << unit.getStatement()->getIsVampire() <<std::endl;
     out<< std::endl;
     return out;
 }

@@ -23,6 +23,8 @@ void Soldier::fight(Unit &enemy) {
         std::cout << std::endl;
 }
 
+
+
 Soldier::~Soldier() {
 
 }

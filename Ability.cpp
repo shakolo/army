@@ -21,3 +21,8 @@ void Ability::setDamage(int damage) {
     Ability::damage = damage;
 }
 
+void Ability::infect(Unit *biter, Unit *target) {
+    std::cout << biter->getName() << ", are you a wild animal?" <<std::endl;
+    std::cout << std::endl;
+}
+

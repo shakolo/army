@@ -23,15 +23,11 @@ void AbilityVampire::attack(Unit *attacker, Unit *target) {
 
         target->getStatement()->setHP(target->getStatement()->getHP() - this->getDamage());
     }
-    if (target->getType() == "Vampire" || target->getType() == "Werewolf" ) {
-        this->counterattack(target, attacker);
-    } else {
-        this->infect(attacker, target);
-    }
+    target->getAbility()->counterattack(target,attacker);
 }
 
 void AbilityVampire::counterattack(Unit* attacker, Unit *target) {
-    std::cout<< "Infected Vampire counterattacks!" << std::endl;
+    std::cout<< "Vampire counterattacks!" << std::endl;
 
     if ( (attacker->getAbility()->getDamage())/2 <= target->getStatement()->getHP() ){
         attacker->getStatement()->setHP(attacker->getStatement()->getHP() + (attacker->getAbility()->getDamage())/2);
@@ -49,12 +45,21 @@ void AbilityVampire::counterattackDefault(Unit* counterattacker, Unit* target) {
 }
 
 void AbilityVampire::infect(Unit* attacker, Unit* target) {
-    target->setType(target->UnitTypes["Vampire"]->getNameUT());
-    target->getStatement()->setHpmax(target->UnitTypes["Vampire"]->getHpmax());
-    target->getAbility()->setDamage(target->UnitTypes["Vampire"]->getDamage());
-    target->getStatement()->setIsVampire();
-    std::cout << "Infect!" << std::endl;
-    target->setAbility(new AbilityVampire(target, target->UnitTypes["Vampire"]->getDamage()));
-    this->counterattack(target, attacker);
+    if (!target->getStatement()->getIsVampire()) {
+        target->getStatement()->isAlive();
+        target->setType(target->UnitTypes["Vampire"]->getNameUT());
+        if(target->getStatement()->getHP() > target->UnitTypes["Vampire"]->getHpmax()) {
+            target->getStatement()->setHP(target->UnitTypes["Vampire"]->getHpmax());
+        }
+        target->getStatement()->setHpmax(target->UnitTypes["Vampire"]->getHpmax());
+        target->getAbility()->setDamage(target->UnitTypes["Vampire"]->getDamage());
+        target->getStatement()->setIsVampire();
+        target->setAbility(new AbilityVampire(target, target->UnitTypes["Vampire"]->getDamage()));
+        std::cout << attacker->getName() << " infected " << target->getName() << std::endl;
+        std::cout << std::endl;
+    } else {
+        std::cout << target->getName() << ": You can bite your heel, stupid idiot! I'm already a vampire." << std::endl;
+    }
+
 }
 

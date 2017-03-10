@@ -16,14 +16,25 @@ int main() {
     Rogue* solovey = new Rogue("Solovey");
     std::cout<< *drakula << std::endl;
     std::cout<< *solovey << std::endl;
-//    std::cout<< *bob << std::endl;
+
+    std::cout<< *bob << std::endl;
+    bob->bite(*drakula);
+    drakula->bite(*bob);
+    std::cout<< *bob << std::endl;
+    bob->bite(*drakula);
 //    std::cout<< *ivar << std::endl;
-    solovey->fight(*drakula);
+//    solovey->fight(*drakula);
+    bob->fight(*drakula);
+    std::cout<< *bob << std::endl;
+    std::cout<< *drakula << std::endl;
+    bob->bite(*solovey);
+    std::cout<< *solovey << std::endl;
+//    drakula->fight(*solovey);
+//    drakula->fight(*bob);
     std::cout<< *drakula << std::endl;
     std::cout<< *solovey << std::endl;
-    drakula->fight(*solovey);
-    std::cout<< *drakula << std::endl;
-    std::cout<< *solovey << std::endl;
+    std::cout<< *bob << std::endl;
+
 //    std::cout<< *ivar << std::endl;
 //
 //    std::cout<< *john << std::endl;
