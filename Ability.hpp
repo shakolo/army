@@ -11,13 +11,18 @@ class Unit;
 
 class Ability {
 protected:
-    int damage;
+    double damage;
+    double counterattackDamage;
+public:
+    void setCounterattackDamage(double counterattackDamage);
+
+protected:
     Unit* owner;
 
 public:
-    void setDamage(int damage);
+    void setDamage(double damage);
 
-    Ability(Unit* owner, int damage);
+    Ability(Unit* owner, double damage, double counterattackDamage);
 
     virtual void attack(Unit*,Unit*) = 0;
     virtual void counterattack(Unit*,Unit*) = 0;
@@ -25,8 +30,8 @@ public:
 
     virtual ~Ability();
 
-    int getDamage();
-
+    double getDamage();
+    double getCounterattackDamage() const;
 
 };
 

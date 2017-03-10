@@ -8,7 +8,7 @@ Vampire::Vampire(const std::string &name)
         : Unit(
         UnitTypes["Vampire"]->getNameUT(),
         new State(UnitTypes["Vampire"]->getHpmax()),
-        new AbilityVampire(this, UnitTypes["Vampire"]->getDamage()),
+        new AbilityVampire(this, UnitTypes["Vampire"]->getDamage(), UnitTypes["Vampire"]->getCounterattackDamage()),
         name )
 {
     std::cout << getName() << " is a " << getType() << std::endl;

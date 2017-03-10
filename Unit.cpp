@@ -3,17 +3,20 @@
 //
 #include <iostream>
 #include "Unit.hpp"
+const double globalHP = 100;
+const double globalDMG = 20;
+const double globalCounterattackDMG = 4;
 
-std::map<std::string, UnitType*>Unit::UnitTypes = {{"Soldier",new UnitType("Soldier", 60, 14)},
-                                             {"Rogue", new UnitType("Rogue", 112, 12)},
-                                             {"Berserker", new UnitType("Berserker", 8, 16)},
-                                             {"Vampire", new UnitType("Vampire", 80, 24)},
-                                             {"Werewolf", new UnitType("Werewolf", 100, 10)},
-                                             {"Wizard", new UnitType("Wizard", 100, 10)},
-                                             {"Healer", new UnitType("Healer", 100, 10)},
-                                             {"Priest", new UnitType("Priest", 100, 10)},
-                                             {"Warlock", new UnitType("Warlock", 100, 10)},
-                                             {"Necromancer", new UnitType("Necromancer", 100, 10)},
+std::map<std::string, UnitType*>Unit::UnitTypes = {{"Soldier",new UnitType("Soldier", globalHP, globalDMG, globalCounterattackDMG)},
+                                             {"Rogue", new UnitType("Rogue", globalHP, globalDMG, globalCounterattackDMG)},
+                                             {"Berserker", new UnitType("Berserker", globalHP, globalDMG, globalCounterattackDMG)},
+                                             {"Vampire", new UnitType("Vampire", globalHP, globalDMG, globalCounterattackDMG)},
+                                             {"Werewolf", new UnitType("Werewolf", globalHP, globalDMG, globalCounterattackDMG)},
+                                             {"Wizard", new UnitType("Wizard", globalHP, globalDMG, globalCounterattackDMG)},
+                                             {"Healer", new UnitType("Healer", globalHP, globalDMG, globalCounterattackDMG)},
+                                             {"Priest", new UnitType("Priest", globalHP, globalDMG, globalCounterattackDMG)},
+                                             {"Warlock", new UnitType("Warlock", globalHP, globalDMG, globalCounterattackDMG)},
+                                             {"Necromancer", new UnitType("Necromancer", globalHP, globalDMG, globalCounterattackDMG)},
 };
 
 Unit::Unit(const std::string& type, State *statement, Ability *ability, const std::string& name) :
@@ -33,7 +36,7 @@ State * Unit::getStatement() {
     return statement;
 }
 
-void Unit::setStatement(int hp) {
+void Unit::setStatement(double hp) {
     this->statement = new State(hp);
 }
 
@@ -74,6 +77,7 @@ std::ostream &operator<<(std::ostream &out, Unit &unit) {
     out << "Unit type: " << unit.getType() << std::endl;
     out << "state hp: " << unit.getStatement()->getHP() << std::endl;
     out << "ability damage: " << unit.getAbility()->getDamage() << std::endl;
+    out << "ability counterattackDamage: " << unit.getAbility()->getCounterattackDamage() << std::endl;
     out << "isVampire " << unit.getStatement()->getIsVampire() <<std::endl;
     out<< std::endl;
     return out;

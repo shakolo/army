@@ -8,7 +8,7 @@
 Rogue::Rogue(const std::string &name)
         : Unit(UnitTypes["Rogue"]->getNameUT(),
                 new State(UnitTypes["Rogue"]->getHpmax()),
-                new AbilityRogue(this, UnitTypes["Rogue"]->getDamage()),
+                new AbilityRogue(this, UnitTypes["Rogue"]->getDamage(), UnitTypes["Rogue"]->getCounterattackDamage()),
                 name)
 {
     std::cout << getName() << " is a " <<  getType() << std::endl;

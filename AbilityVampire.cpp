@@ -4,7 +4,7 @@
 
 #include "AbilityVampire.hpp"
 
-AbilityVampire::AbilityVampire(Unit *owner, int damage) : Ability(owner, damage) {}
+AbilityVampire::AbilityVampire(Unit *owner, double damage, double counterattackDamage) : Ability(owner, damage, counterattackDamage) {}
 
 void AbilityVampire::attack(Unit *attacker, Unit *target) {
     std::cout<< "attackVampire succes: " << target->getName()<<" lost -"<< this->getDamage() << " hp" << std::endl;
@@ -29,9 +29,9 @@ void AbilityVampire::attack(Unit *attacker, Unit *target) {
 void AbilityVampire::counterattack(Unit* attacker, Unit *target) {
     std::cout<< "Vampire counterattacks!" << std::endl;
 
-    if ( (attacker->getAbility()->getDamage())/2 <= target->getStatement()->getHP() ){
-        attacker->getStatement()->setHP(attacker->getStatement()->getHP() + (attacker->getAbility()->getDamage())/2);
-        std::cout << attacker->getName() << " drinks +" << (attacker->getAbility()->getDamage()/2) << " of blood " <<  target->getName() << std::endl;
+    if ( (attacker->getAbility()->getCounterattackDamage()) <= target->getStatement()->getHP() ){
+        attacker->getStatement()->setHP(attacker->getStatement()->getHP() + (attacker->getAbility()->getCounterattackDamage()));
+        std::cout << attacker->getName() << " drinks +" << (attacker->getAbility()->getCounterattackDamage()) << " of blood " <<  target->getName() << std::endl;
         this->counterattackDefault(attacker,target);
     } else {
         attacker->getStatement()->setHP(target->getStatement()->getHP() + attacker->getStatement()->getHP());
@@ -53,8 +53,9 @@ void AbilityVampire::infect(Unit* attacker, Unit* target) {
         }
         target->getStatement()->setHpmax(target->UnitTypes["Vampire"]->getHpmax());
         target->getAbility()->setDamage(target->UnitTypes["Vampire"]->getDamage());
+        target->getAbility()->setCounterattackDamage(target->UnitTypes["Vampire"]->getCounterattackDamage());
         target->getStatement()->setIsVampire();
-        target->setAbility(new AbilityVampire(target, target->UnitTypes["Vampire"]->getDamage()));
+        target->setAbility(new AbilityVampire(target, target->UnitTypes["Vampire"]->getDamage(), target->UnitTypes["Vampire"]->getCounterattackDamage()));
         std::cout << attacker->getName() << " infected " << target->getName() << std::endl;
         std::cout << std::endl;
     } else {

@@ -30,7 +30,7 @@ public:
     Unit(const std::string& type, State *statement, Ability *ability, const std::string& name);
 
     State * getStatement();
-    void setStatement(int);
+    void setStatement(double);
     Ability * getAbility();
     void setAbility(Ability*);
     virtual void fight(Unit &enemy) = 0 ;

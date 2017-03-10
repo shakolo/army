@@ -10,7 +10,7 @@
 
 class AbilityVampire: public Ability {
 public:
-    AbilityVampire(Unit *owner, int damage);
+    AbilityVampire(Unit *owner, double damage, double counterattackDamage);
     void attack(Unit *attacker, Unit *target);
     void counterattack(Unit* counterattacker, Unit *target);
     void counterattackDefault(Unit* counterattacker, Unit *target);

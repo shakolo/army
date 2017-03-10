@@ -7,14 +7,12 @@
 #include "Unit.hpp"
 #include "Ability.hpp"
 
-
 class AbilityDefault: public Ability {
 public:
-    AbilityDefault(Unit*,int);
+    AbilityDefault(Unit*,double, double);
     void attack(Unit*,Unit*);
     void counterattack(Unit* counterattacker, Unit* target);
     void counterattackDefault(Unit* counterattacker, Unit* target);
-    void counterattackVampire(Unit* counterattacker, Unit* target);
 };
 
 

@@ -4,7 +4,7 @@
 
 #include "AbilityDefault.hpp"
 
-AbilityDefault::AbilityDefault(Unit* owner, int damage) : Ability(owner, damage) {}
+AbilityDefault::AbilityDefault(Unit* owner, double damage, double counterattackDamage) : Ability(owner, damage, counterattackDamage) {}
 
 void AbilityDefault::attack(Unit* attacker, Unit *target) {
     target->getStatement()->isAlive();
@@ -27,13 +27,13 @@ void AbilityDefault::counterattack(Unit* counterattacker, Unit* target){
 
     if (!counterattacker->getStatement()->getIsVampire()) {
         this->counterattackDefault(counterattacker,target);
-        std::cout<<"counterattack succes: " << target->getName() <<" lost -"<< this->getDamage()/2 << std::endl;
+        std::cout<<"counterattack succes: " << target->getName() <<" lost -"<< this->getCounterattackDamage() << std::endl;
     } else if (counterattacker->getStatement()->getIsVampire()) {
         counterattacker->getAbility()->counterattack(counterattacker,target);
     }
 }
 
 void AbilityDefault::counterattackDefault(Unit* counterattacker, Unit* target) {
-    target->getStatement()->setHP(target->getStatement()->getHP() -  counterattacker->getAbility()->getDamage()/2);
+    target->getStatement()->setHP(target->getStatement()->getHP() -  counterattacker->getAbility()->getCounterattackDamage());
 }
 

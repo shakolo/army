@@ -8,7 +8,7 @@
 Soldier::Soldier(const std::string &name)
         : Unit(UnitTypes["Soldier"]->getNameUT(),
                new State(UnitTypes["Soldier"]->getHpmax()),
-               new AbilityDefault(this, UnitTypes["Soldier"]->getDamage()),
+               new AbilityDefault(this, UnitTypes["Soldier"]->getDamage(), UnitTypes["Soldier"]->getCounterattackDamage()),
                name)
 {
     std::cout << getName() << " is a " << getType() << std::endl;

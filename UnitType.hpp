@@ -10,20 +10,22 @@
 class UnitType {
 private:
     std::string name;
-    int hpmax;
-    int damage;
+    double hpmax;
+    double damage;
+    double counterattackDamage;
 
 public:
 
-    UnitType(const std::string &name, int hpmax, int damage);
+    UnitType(const std::string &name, double hpmax, double damage, double counterattackDamage);
 
     virtual ~UnitType();
 
     const std::string &getNameUT() const;
 
-    int getHpmax() const;
+    double getHpmax() const;
 
-    int getDamage() const;
+    double getDamage() const;
+    double getCounterattackDamage() const;
 };
 
 

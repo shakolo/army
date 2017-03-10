@@ -9,7 +9,7 @@
 
 class AbilityRogue: public Ability {
 public:
-    AbilityRogue(Unit* owner,int damage);
+    AbilityRogue(Unit* owner, double damage, double counterattackDamage);
     void attack(Unit* attacker,Unit* target);
 
     void counterattack(Unit *counterattacker, Unit *target);

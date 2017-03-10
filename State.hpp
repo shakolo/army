@@ -8,22 +8,22 @@
 
 class State {
 private:
-    int hp;
-    int hpmax;
+    double hp;
+    double hpmax;
     bool isVampire;
 public:
-    State(int hpmax);
+    State(double hpmax);
 
-    int getHP();
-    int getHPM();
+    double getHP();
+    double getHPM();
 
-    void setHP(int);
+    void setHP(double);
     bool getIsVampire();
     void setIsVampire();
     virtual ~State();
 
     void isAlive();
-    void setHpmax(int hpmax);
+    void setHpmax(double hpmax);
 };
 
 

@@ -5,7 +5,7 @@
 #include "State.hpp"
 #include <iostream>
 
-State::State(int hpmax) : hpmax(hpmax) {
+State::State(double hpmax) : hpmax(hpmax) {
     hp = hpmax;
     isVampire = false;
 }
@@ -14,15 +14,15 @@ State::~State() {
 
 }
 
-int State::getHP() {
+double State::getHP() {
     return hp;
 }
 
-int State::getHPM() {
+double State::getHPM() {
     return hpmax;
 }
 
-void State::setHP(int newHP) {
+void State::setHP(double newHP) {
     isAlive();
     if ( newHP <= hpmax ) {
         this->hp = newHP;
@@ -48,8 +48,8 @@ bool State::getIsVampire() {
     return isVampire;
 }
 
-void State::setHpmax(int hpmax) {
-    State::hpmax = hpmax;
+void State::setHpmax(double hpmax) {
+   this->hpmax = hpmax;
 }
 
 

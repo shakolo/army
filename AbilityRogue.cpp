@@ -4,8 +4,8 @@
 
 #include "AbilityRogue.hpp"
 
-AbilityRogue::AbilityRogue(Unit *owner, int damage) :
-        Ability(owner, damage) {
+AbilityRogue::AbilityRogue(Unit *owner, double damage, double counterattackDamage) :
+        Ability(owner, damage, counterattackDamage) {
 }
 
 void AbilityRogue::attack(Unit *attacker, Unit *target) {
@@ -26,11 +26,11 @@ void AbilityRogue::counterattack(Unit* counterattacker, Unit* target){
 
     if (!counterattacker->getStatement()->getIsVampire()) {
         this->counterattackDefault(counterattacker,target);
-        std::cout<<"counterattack succes: " << target->getName() <<" lost -"<< this->getDamage()/2 << std::endl;
+        std::cout<<"counterattack succes: " << target->getName() <<" lost -"<<getCounterattackDamage() << std::endl;
     } else if (counterattacker->getStatement()->getIsVampire()) {
         counterattacker->getAbility()->counterattack(counterattacker,target);
     }
 }
 void AbilityRogue::counterattackDefault(Unit* counterattacker, Unit* target) {
-    target->getStatement()->setHP(target->getStatement()->getHP() -  counterattacker->getAbility()->getDamage()/2);
+    target->getStatement()->setHP(target->getStatement()->getHP() -  counterattacker->getAbility()->getCounterattackDamage());
 }
