@@ -6,9 +6,9 @@
 #include "Soldier.hpp"
 
 Soldier::Soldier(const std::string &name)
-        : Unit(UnitTypes["Soldier"]->getNameUT(),
-               new State(UnitTypes["Soldier"]->getHpmax()),
-               new AbilityDefault(this, UnitTypes["Soldier"]->getDamage(), UnitTypes["Soldier"]->getCounterattackDamage()),
+        : Unit(UnitTypesConfig["Soldier"]->getNameUT(),
+               new StateDefault(UnitTypesConfig["Soldier"]->getHpmax()),
+               new AbilityDefault(this, UnitTypesConfig["Soldier"]->getDamage(), UnitTypesConfig["Soldier"]->getCounterattackDamage()),
                name)
 {
     std::cout << getName() << " is a " << getType() << std::endl;
@@ -19,7 +19,7 @@ void Soldier::fight(Unit &enemy) {
         this->statement->isAlive();
         std::cout << std::endl;
         std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
-        this->ability->attack(this, &enemy);
+        this->getAbility()->attack(this, &enemy);
         std::cout << std::endl;
 }
 

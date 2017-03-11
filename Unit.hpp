@@ -30,7 +30,7 @@ public:
     Unit(const std::string& type, State *statement, Ability *ability, const std::string& name);
 
     State * getStatement();
-    void setStatement(double);
+    void setStatement(State*);
     Ability * getAbility();
     void setAbility(Ability*);
     virtual void fight(Unit &enemy) = 0 ;
@@ -40,10 +40,10 @@ public:
     virtual void setName(const std::string& name);
     virtual ~Unit();
 
-    static std::map<std::string, UnitType*>UnitTypes;
+    static std::map<std::string, UnitType*>UnitTypesConfig;
 };
 std::ostream &operator<<(std::ostream &out, Unit &unit);
 
-//std::map<std::string, int>UnitTypes;
+//std::map<std::string, int>UnitTypesConfig;
 
 #endif //ARMY_UNIT_HPP

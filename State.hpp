@@ -7,7 +7,7 @@
 #include "UnitIsDeadException.hpp"
 
 class State {
-private:
+protected:
     double hp;
     double hpmax;
     bool isVampire;
@@ -17,13 +17,19 @@ public:
     double getHP();
     double getHPM();
 
-    void setHP(double);
+    virtual void physicalDamage(double) = 0;
+    virtual void magicalDamage(double) = 0;
+    virtual void vampireDrinks(double) = 0;
     bool getIsVampire();
     void setIsVampire();
     virtual ~State();
 
     void isAlive();
     void setHpmax(double hpmax);
+
+    void setHP(double d);
+
+    void addHP(double hp);
 };
 
 

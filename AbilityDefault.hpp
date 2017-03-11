@@ -12,7 +12,7 @@ public:
     AbilityDefault(Unit*,double, double);
     void attack(Unit*,Unit*);
     void counterattack(Unit* counterattacker, Unit* target);
-    void counterattackDefault(Unit* counterattacker, Unit* target);
+//    void counterattackDefault(Unit* counterattacker, Unit* target);
 };
 
 

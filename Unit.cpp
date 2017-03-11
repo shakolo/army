@@ -7,8 +7,8 @@ const double globalHP = 100;
 const double globalDMG = 20;
 const double globalCounterattackDMG = 4;
 
-std::map<std::string, UnitType*>Unit::UnitTypes = {{"Soldier",new UnitType("Soldier", globalHP, globalDMG, globalCounterattackDMG)},
-                                             {"Rogue", new UnitType("Rogue", globalHP, globalDMG, globalCounterattackDMG)},
+std::map<std::string, UnitType*>Unit::UnitTypesConfig = {{"Soldier",new UnitType("Soldier", globalHP, globalDMG, globalCounterattackDMG)},
+                                             {"Rogue", new UnitType("Rogue", 21, globalDMG, globalCounterattackDMG)},
                                              {"Berserker", new UnitType("Berserker", globalHP, globalDMG, globalCounterattackDMG)},
                                              {"Vampire", new UnitType("Vampire", globalHP, globalDMG, globalCounterattackDMG)},
                                              {"Werewolf", new UnitType("Werewolf", globalHP, globalDMG, globalCounterattackDMG)},
@@ -36,8 +36,11 @@ State * Unit::getStatement() {
     return statement;
 }
 
-void Unit::setStatement(double hp) {
-    this->statement = new State(hp);
+void Unit::setStatement(State* newState) {
+    if( this->statement != NULL ) {
+        delete this->statement;
+    }
+    this->statement = newState;
 }
 
 Ability * Unit::getAbility() {

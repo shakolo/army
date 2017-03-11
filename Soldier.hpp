@@ -7,6 +7,7 @@
 #include <string>
 #include "Unit.hpp"
 #include "AbilityDefault.hpp"
+#include "StateDefault.hpp"
 
 class Soldier: public Unit {
 public:

@@ -6,9 +6,9 @@
 #include "Rogue.hpp"
 
 Rogue::Rogue(const std::string &name)
-        : Unit(UnitTypes["Rogue"]->getNameUT(),
-                new State(UnitTypes["Rogue"]->getHpmax()),
-                new AbilityRogue(this, UnitTypes["Rogue"]->getDamage(), UnitTypes["Rogue"]->getCounterattackDamage()),
+        : Unit(UnitTypesConfig["Rogue"]->getNameUT(),
+                new StateDefault(UnitTypesConfig["Rogue"]->getHpmax()),
+                new AbilityRogue(this, UnitTypesConfig["Rogue"]->getDamage(), UnitTypesConfig["Rogue"]->getCounterattackDamage()),
                 name)
 {
     std::cout << getName() << " is a " <<  getType() << std::endl;

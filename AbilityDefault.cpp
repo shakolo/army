@@ -12,28 +12,29 @@ void AbilityDefault::attack(Unit* attacker, Unit *target) {
 
     std::cout<< "attack succes: " << target->getName()<<" lost -"<< this->getDamage() << " hp" << std::endl;
 
-    target->getStatement()->setHP(target->getStatement()->getHP() - this->getDamage());
+    target->getStatement()->physicalDamage(this->getDamage());
 
     target->getStatement()->isAlive();
-
-    this->counterattack(target,attacker);
+    target->getAbility()->counterattack(target,attacker);
+//    this->counterattack(target,attacker);
 }
 
 void AbilityDefault::counterattack(Unit* counterattacker, Unit* target){
     target->getStatement()->isAlive();
     counterattacker->getStatement()->isAlive();
-
+//
     std::cout<<counterattacker->getName()<<" counterattack "<< target->getName() << std::endl;
-
-    if (!counterattacker->getStatement()->getIsVampire()) {
-        this->counterattackDefault(counterattacker,target);
-        std::cout<<"counterattack succes: " << target->getName() <<" lost -"<< this->getCounterattackDamage() << std::endl;
-    } else if (counterattacker->getStatement()->getIsVampire()) {
-        counterattacker->getAbility()->counterattack(counterattacker,target);
-    }
+    target->getStatement()->physicalDamage(counterattacker->getAbility()->getCounterattackDamage());
+//    counterattacker->getAbility()->counterattack(counterattacker,target);
+//    if (!counterattacker->getStatement()->getIsVampire()) {
+//        this->counterattackDefault(counterattacker,target);
+//        std::cout<<"counterattack succes: " << target->getName() <<" lost -"<< this->getCounterattackDamage() << std::endl;
+//    } else if (counterattacker->getStatement()->getIsVampire()) {
+//        counterattacker->getAbility()->counterattack(counterattacker,target);
+//    }
 }
-
-void AbilityDefault::counterattackDefault(Unit* counterattacker, Unit* target) {
-    target->getStatement()->setHP(target->getStatement()->getHP() -  counterattacker->getAbility()->getCounterattackDamage());
-}
+//
+//void AbilityDefault::counterattackDefault(Unit* counterattacker, Unit* target) {
+//
+//}
 

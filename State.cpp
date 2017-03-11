@@ -22,15 +22,6 @@ double State::getHPM() {
     return hpmax;
 }
 
-void State::setHP(double newHP) {
-    isAlive();
-    if ( newHP <= hpmax ) {
-        this->hp = newHP;
-    } else {
-        this->hp = this->hpmax;
-    }
-    isAlive();
-}
 
 void State::isAlive() {
     if ( hp <= 0 ) {
@@ -52,4 +43,17 @@ void State::setHpmax(double hpmax) {
    this->hpmax = hpmax;
 }
 
+void State::setHP(double hp) {
+    this->hp = hp;
+}
+
+void State::addHP(double hp) {
+    if ((this->hp + hp) <= hpmax ) {
+        this->hp += hp;
+        std::cout<< "add hp!" << std::endl;
+    } else {
+        std::cout<< "hpmax!" << std::endl;
+        this->hp = hpmax;
+    }
+}
 

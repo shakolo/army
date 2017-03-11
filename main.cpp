@@ -10,43 +10,62 @@
 int main() {
 
     Soldier* bob = new Soldier("Bob");
-//    Berserker* ivar = new Berserker("Ivar");
+    Berserker* ivar = new Berserker("Ivar");
 //    Soldier* john = new Soldier("John");
     Vampire *drakula = new Vampire("Drakula");
     Rogue* solovey = new Rogue("Solovey");
     std::cout<< *drakula << std::endl;
-    std::cout<< *solovey << std::endl;
+//    std::cout<< *solovey << std::endl;
+//
+//    drakula->fight(*bob);
+//    std::cout<< *drakula << std::endl;
+//    std::cout<< *bob << std::endl;
+//    bob->fight(*drakula);
+//    std::cout<< *drakula << std::endl;
+//    std::cout<< *bob << std::endl;
+//    bob->bite(*drakula);
+//    drakula->bite(*bob);
 
-    std::cout<< *bob << std::endl;
-    bob->bite(*drakula);
-    drakula->bite(*bob);
-    std::cout<< *bob << std::endl;
-    bob->bite(*drakula);
+//    std::cout<< *bob << std::endl;
+//    bob->bite(*drakula);
 //    std::cout<< *ivar << std::endl;
 //    solovey->fight(*drakula);
-    bob->fight(*drakula);
-    std::cout<< *bob << std::endl;
-    std::cout<< *drakula << std::endl;
-    bob->bite(*solovey);
-    std::cout<< *solovey << std::endl;
-//    drakula->fight(*solovey);
-//    drakula->fight(*bob);
-    std::cout<< *drakula << std::endl;
-    std::cout<< *solovey << std::endl;
-    std::cout<< *bob << std::endl;
+//    bob->fight(*drakula);
+//    std::cout<< *bob << std::endl;
+//    std::cout<< *drakula << std::endl;
+//    bob->bite(*solovey);
+//    std::cout<< *solovey << std::endl;
+//
+    drakula->fight(*solovey);
 
-//    std::cout<< *ivar << std::endl;
+//    try{
+//        bob->fight(*drakula);
+//        std::cout<< *bob << std::endl;
+//        std::cout<< *drakula << std::endl;
+//
+//    } catch (UnitIsDeadException& e) {
+//    std::cout << "Standard exception: "<< e.message << std::endl;
+//}
+
+    std::cout<< *drakula << std::endl;
+    std::cout<< *solovey << std::endl;
+    solovey->fight(*drakula);
+//    std::cout<< *bob << std::endl;
+
+
 //
 //    std::cout<< *john << std::endl;
 
 
 
 //    std::cout<< std::endl;
-    solovey->fight(*bob);
-    std::cout<< *bob << std::endl;
-    std::cout<< *solovey << std::endl;
+//    solovey->fight(*bob);
+//    std::cout<< *bob << std::endl;
+//    std::cout<< *solovey << std::endl;
 //
-
+//    std::cout<< *ivar << std::endl;
+//    solovey->bite(*ivar);
+//    std::cout<< *ivar << std::endl;
 //    ivar->fight(*solovey);
 //    solovey->fight(*ivar);
 //
@@ -83,14 +102,15 @@ int main() {
 //    }
 //    std::cout<< *bob << std::endl;
 //    std::cout<< *drakula << std::endl;
-//try {
+try {
 //    std::cout<< *drakula << std::endl;
 //    std::cout<< *bob << std::endl;
-//        drakula->fight(*bob);
-//    } catch (UnitIsDeadException& e) {
-//        std::cout << "Standard exception: "<< e.message << std::endl;
-//}
-//    std::cout<< *drakula << std::endl;
+        drakula->fight(*solovey);
+    } catch (UnitIsDeadException& e) {
+        std::cout << "Standard exception: "<< e.message << std::endl;
+}
+    std::cout<< *drakula << std::endl;
+    std::cout<< *solovey << std::endl;
 //    std::cout<< *bob << std::endl;
 //    bob->fight(*drakula);
 //    std::cout<< *drakula << std::endl;

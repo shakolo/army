@@ -13,7 +13,7 @@ public:
     void attack(Unit* attacker,Unit* target);
 
     void counterattack(Unit *counterattacker, Unit *target);
-    void counterattackDefault(Unit *counterattacker, Unit *target);
+//    void counterattackDefault(Unit *counterattacker, Unit *target);
 };
 
 #endif //ARMY_ABILITYROGUE_HPP

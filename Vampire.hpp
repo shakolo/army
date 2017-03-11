@@ -8,6 +8,7 @@
 #include "Unit.hpp"
 //#include "AbilityDefault.hpp"
 #include "AbilityVampire.hpp"
+#include "StateVampire.hpp"
 
 class Vampire: public Unit {
 public:
