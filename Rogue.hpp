@@ -14,7 +14,7 @@ public:
 
     virtual ~Rogue();
 
-    void fight(Unit&);
+//    void fight(Unit&);
 
 };
 

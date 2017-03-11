@@ -5,16 +5,23 @@
 #include "Rogue.hpp"
 #include "Berserker.hpp"
 #include "Vampire.hpp"
+#include "Wizard.hpp"
 
 
 int main() {
-
+    Wizard* gendalf = new Wizard("Gendalf");
     Soldier* bob = new Soldier("Bob");
-    Berserker* ivar = new Berserker("Ivar");
+
+    gendalf->cast(*bob);
+
+    std::cout<< *bob << std::endl;
+
+
+//    Berserker* ivar = new Berserker("Ivar");
 //    Soldier* john = new Soldier("John");
-    Vampire *drakula = new Vampire("Drakula");
-    Rogue* solovey = new Rogue("Solovey");
-    std::cout<< *drakula << std::endl;
+//    Vampire *drakula = new Vampire("Drakula");
+//    Rogue* solovey = new Rogue("Solovey");
+//    std::cout<< *drakula << std::endl;
 //    std::cout<< *solovey << std::endl;
 //
 //    drakula->fight(*bob);
@@ -36,7 +43,7 @@ int main() {
 //    bob->bite(*solovey);
 //    std::cout<< *solovey << std::endl;
 //
-    drakula->fight(*solovey);
+//    drakula->fight(*solovey);
 
 //    try{
 //        bob->fight(*drakula);
@@ -47,9 +54,9 @@ int main() {
 //    std::cout << "Standard exception: "<< e.message << std::endl;
 //}
 
-    std::cout<< *drakula << std::endl;
-    std::cout<< *solovey << std::endl;
-    solovey->fight(*drakula);
+//    std::cout<< *drakula << std::endl;
+//    std::cout<< *solovey << std::endl;
+//    solovey->fight(*drakula);
 //    std::cout<< *bob << std::endl;
 
 
@@ -102,15 +109,15 @@ int main() {
 //    }
 //    std::cout<< *bob << std::endl;
 //    std::cout<< *drakula << std::endl;
-try {
+//try {
+////    std::cout<< *drakula << std::endl;
+////    std::cout<< *bob << std::endl;
+//        drakula->fight(*solovey);
+//    } catch (UnitIsDeadException& e) {
+//        std::cout << "Standard exception: "<< e.message << std::endl;
+//}
 //    std::cout<< *drakula << std::endl;
-//    std::cout<< *bob << std::endl;
-        drakula->fight(*solovey);
-    } catch (UnitIsDeadException& e) {
-        std::cout << "Standard exception: "<< e.message << std::endl;
-}
-    std::cout<< *drakula << std::endl;
-    std::cout<< *solovey << std::endl;
+//    std::cout<< *solovey << std::endl;
 //    std::cout<< *bob << std::endl;
 //    bob->fight(*drakula);
 //    std::cout<< *drakula << std::endl;

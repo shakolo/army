@@ -33,7 +33,7 @@ public:
     void setStatement(State*);
     Ability * getAbility();
     void setAbility(Ability*);
-    virtual void fight(Unit &enemy) = 0 ;
+    virtual void fight(Unit &enemy);
     virtual void bite(Unit &enemy);
 
     virtual std::string getName();

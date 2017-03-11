@@ -11,7 +11,7 @@ void AbilityVampire::attack(Unit *attacker, Unit *target) {
 
     if (attacker->getAbility()->getDamage() <=  target->getStatement()->getHP()) {
         target->getStatement()->physicalDamage(this->getDamage());
-        std::cout << attacker->getName() << "! drinks +" << attacker->getAbility()->getDamage() << " of blood "
+        std::cout << attacker->getName() << " drinks +" << attacker->getAbility()->getDamage() << " of blood "
                   <<  target->getName() << std::endl;
         attacker->getStatement()->vampireDrinks(this->getDamage());
     } else {

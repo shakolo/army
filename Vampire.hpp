@@ -13,7 +13,7 @@
 class Vampire: public Unit {
 public:
     Vampire(const std::string &name);
-    void fight(Unit&);
+//    void fight(Unit&);
     virtual ~Vampire();
 };
 

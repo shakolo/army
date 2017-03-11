@@ -13,7 +13,7 @@ class Soldier: public Unit {
 public:
 
     Soldier(const std::string &name);
-    void fight(Unit &enemy);
+//    void fight(Unit &enemy);
     virtual ~Soldier();
 
 };

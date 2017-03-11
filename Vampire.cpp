@@ -20,10 +20,10 @@ Vampire::~Vampire() {
 
 }
 
-void Vampire::fight(Unit &enemy) {
-    this->statement->isAlive();
-    std::cout << std::endl;
-    std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
-    this->ability->attack(this, &enemy);
-    std::cout << std::endl;
-}
+//void Vampire::fight(Unit &enemy) {
+//    this->statement->isAlive();
+//    std::cout << std::endl;
+//    std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
+//    this->ability->attack(this, &enemy);
+//    std::cout << std::endl;
+//}

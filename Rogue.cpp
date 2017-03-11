@@ -15,13 +15,13 @@ Rogue::Rogue(const std::string &name)
     std::cout<<std::endl;
 }
 
-void Rogue::fight(Unit &enemy) {
-        this->getStatement()->isAlive();
-        std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
-        enemy.getStatement()->isAlive();
-        this->ability->attack(this, &enemy);
-        std::cout << std::endl;
-}
+//void Rogue::fight(Unit &enemy) {
+//        this->getStatement()->isAlive();
+//        std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
+//        enemy.getStatement()->isAlive();
+//        this->ability->attack(this, &enemy);
+//        std::cout << std::endl;
+//}
 
 Rogue::~Rogue() {
 

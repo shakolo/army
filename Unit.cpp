@@ -12,6 +12,7 @@ std::map<std::string, UnitType*>Unit::UnitTypesConfig = {{"Soldier",new UnitType
                                              {"Berserker", new UnitType("Berserker", globalHP, globalDMG, globalCounterattackDMG)},
                                              {"Vampire", new UnitType("Vampire", globalHP, globalDMG, globalCounterattackDMG)},
                                              {"Werewolf", new UnitType("Werewolf", globalHP, globalDMG, globalCounterattackDMG)},
+                                             {"Spellcaster", new UnitType("Spellcaster", globalHP, globalDMG, globalCounterattackDMG)},
                                              {"Wizard", new UnitType("Wizard", globalHP, globalDMG, globalCounterattackDMG)},
                                              {"Healer", new UnitType("Healer", globalHP, globalDMG, globalCounterattackDMG)},
                                              {"Priest", new UnitType("Priest", globalHP, globalDMG, globalCounterattackDMG)},
@@ -73,6 +74,14 @@ const std::string &Unit::getType() const {
 void Unit::bite(Unit &enemy) {
     std::cout << this->getName() << " bites " << enemy.getName() << std::endl;
     this->getAbility()->infect(this, &enemy);
+}
+
+void Unit::fight(Unit &enemy) {
+    this->statement->isAlive();
+    std::cout << std::endl;
+    std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
+    this->getAbility()->attack(this, &enemy);
+    std::cout << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, Unit &unit) {
