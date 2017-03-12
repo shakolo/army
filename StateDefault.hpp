@@ -11,7 +11,7 @@ class StateDefault: public State {
 public:
     StateDefault(double hpmax);
     void physicalDamage(double);
-    void magicalDamage(double);
+    void magicalInfluence(double);
     void vampireDrinks(double);
 };
 

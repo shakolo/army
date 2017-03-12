@@ -13,7 +13,7 @@ public:
     StateVampire(double hpmax);
     void physicalDamage(double);
     void vampireDrinks(double);
-    void magicalDamage(double);
+    void magicalInfluence(double);
 };
 
 

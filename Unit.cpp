@@ -85,6 +85,7 @@ void Unit::fight(Unit &enemy) {
 }
 
 std::ostream &operator<<(std::ostream &out, Unit &unit) {
+    out<< std::endl;
     out << "Unit name: " << unit.getName() << std::endl;
     out << "Unit type: " << unit.getType() << std::endl;
     out << "state hp: " << unit.getStatement()->getHP() << std::endl;

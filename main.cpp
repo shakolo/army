@@ -6,42 +6,53 @@
 #include "Berserker.hpp"
 #include "Vampire.hpp"
 #include "Wizard.hpp"
+#include "Healer.hpp"
 
 
 int main() {
+    Healer* avicenna = new Healer("Ibn-Sina");
     Wizard* gendalf = new Wizard("Gendalf");
     Soldier* bob = new Soldier("Bob");
-
+    std::cout<< *bob << std::endl;
     gendalf->cast(*bob, "FIREBALL");
 
     std::cout<< *bob << std::endl;
+    avicenna->cast(*bob, "AVADAKEDAVRA");
+    std::cout<< *bob << std::endl;
 
+    std::cout<< *bob << std::endl;
+    avicenna->cast(*bob, "FIREBALL");
+
+
+    std::cout<< *bob << std::endl;
+    gendalf->cast(*bob, "AVADAKEDAVRA");
+    std::cout<< *bob << std::endl;
 
 //    Berserker* ivar = new Berserker("Ivar");
 //    Soldier* john = new Soldier("John");
-    Vampire *drakula = new Vampire("Drakula");
-    Rogue* solovey = new Rogue("Solovey");
-    std::cout<< *drakula << std::endl;
-    std::cout<< *solovey << std::endl;
-//
-    drakula->fight(*bob);
-    std::cout<< *drakula << std::endl;
-    std::cout<< *bob << std::endl;
-    bob->fight(*drakula);
-    std::cout<< *drakula << std::endl;
-    std::cout<< *bob << std::endl;
-    bob->bite(*drakula);
-    drakula->bite(*bob);
-
-    std::cout<< *bob << std::endl;
-    bob->bite(*drakula);
-//    std::cout<< *ivar << std::endl;
-    solovey->fight(*drakula);
-//    bob->fight(*drakula);
+//    Vampire *drakula = new Vampire("Drakula");
+//    Rogue* solovey = new Rogue("Solovey");
+//    std::cout<< *drakula << std::endl;
+//    std::cout<< *solovey << std::endl;
+////
+//    drakula->fight(*bob);
+//    std::cout<< *drakula << std::endl;
 //    std::cout<< *bob << std::endl;
-    std::cout<< *drakula << std::endl;
-//    bob->bite(*solovey);
-    std::cout<< *solovey << std::endl;
+//    bob->fight(*drakula);
+//    std::cout<< *drakula << std::endl;
+//    std::cout<< *bob << std::endl;
+//    bob->bite(*drakula);
+//    drakula->bite(*bob);
+//
+//    std::cout<< *bob << std::endl;
+//    bob->bite(*drakula);
+////    std::cout<< *ivar << std::endl;
+//    solovey->fight(*drakula);
+////    bob->fight(*drakula);
+////    std::cout<< *bob << std::endl;
+//    std::cout<< *drakula << std::endl;
+////    bob->bite(*solovey);
+//    std::cout<< *solovey << std::endl;
 //
 //    drakula->fight(*solovey);
 

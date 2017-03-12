@@ -11,7 +11,7 @@ class Fireball: public Spell {
 public:
     Fireball();
 
-    void magicAttack(Unit* target);
+    void magic(Unit* target);
 };
 
 

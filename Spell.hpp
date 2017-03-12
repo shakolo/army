@@ -17,6 +17,13 @@ protected:
 
 
     double spellPower;
+public:
+    void setSpellPower(double spellPower);
+
+public:
+    double getSpellPower() const;
+
+protected:
 
     std::string spellText;
 public:
@@ -26,7 +33,7 @@ public:
 
     virtual ~Spell();
 
-    virtual void magicAttack(Unit* target) = 0;
+    virtual void magic(Unit* target) = 0;
 //    virtual void magicHeal(Unit* target);
 };
 

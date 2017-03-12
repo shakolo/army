@@ -12,6 +12,8 @@ class HealerMage: public Spellcaster {
 public:
     HealerMage(const std::string &name);
 
+
+    void cast(Unit &target, std::string magic);
 };
 
 

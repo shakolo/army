@@ -18,7 +18,7 @@ public:
     double getHPM();
 
     virtual void physicalDamage(double) = 0;
-    virtual void magicalDamage(double) = 0;
+    virtual void magicalInfluence(double) = 0;
     virtual void vampireDrinks(double) = 0;
     bool getIsVampire();
     void setIsVampire();

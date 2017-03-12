@@ -5,10 +5,11 @@
 #ifndef ARMY_HEALER_HPP
 #define ARMY_HEALER_HPP
 
+#include "HealerMage.hpp"
 
-#include "Spellcaster.hpp"
-
-class Healer: public Spellcaster {
+class Healer: public HealerMage {
+public:
+    Healer(const std::string &name);
 
 };
 

@@ -4,8 +4,8 @@
 
 #include "Fireball.hpp"
 
-void Fireball::magicAttack(Unit* target) {
-    target->getStatement()->magicalDamage(spellPower);
+void Fireball::magic(Unit* target) {
+    target->getStatement()->magicalInfluence(spellPower);
 }
 
 Fireball::Fireball() {

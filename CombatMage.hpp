@@ -12,6 +12,7 @@ class CombatMage: public Spellcaster {
 public:
     CombatMage(const std::string &name);
 
+    void cast(Unit &target, std::string magic);
 };
 
 

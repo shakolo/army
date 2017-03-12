@@ -18,5 +18,6 @@ public:
     virtual void cast(Unit& target, std::string magic);
 };
 
+std::ostream &operator<<(std::ostream &out, Spellcaster &unit);
 
 #endif //ARMY_SPELLCASTER_HPP
