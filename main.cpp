@@ -12,36 +12,36 @@ int main() {
     Wizard* gendalf = new Wizard("Gendalf");
     Soldier* bob = new Soldier("Bob");
 
-    gendalf->cast(*bob);
+    gendalf->cast(*bob, "FIREBALL");
 
     std::cout<< *bob << std::endl;
 
 
 //    Berserker* ivar = new Berserker("Ivar");
 //    Soldier* john = new Soldier("John");
-//    Vampire *drakula = new Vampire("Drakula");
-//    Rogue* solovey = new Rogue("Solovey");
-//    std::cout<< *drakula << std::endl;
-//    std::cout<< *solovey << std::endl;
+    Vampire *drakula = new Vampire("Drakula");
+    Rogue* solovey = new Rogue("Solovey");
+    std::cout<< *drakula << std::endl;
+    std::cout<< *solovey << std::endl;
 //
-//    drakula->fight(*bob);
-//    std::cout<< *drakula << std::endl;
-//    std::cout<< *bob << std::endl;
-//    bob->fight(*drakula);
-//    std::cout<< *drakula << std::endl;
-//    std::cout<< *bob << std::endl;
-//    bob->bite(*drakula);
-//    drakula->bite(*bob);
+    drakula->fight(*bob);
+    std::cout<< *drakula << std::endl;
+    std::cout<< *bob << std::endl;
+    bob->fight(*drakula);
+    std::cout<< *drakula << std::endl;
+    std::cout<< *bob << std::endl;
+    bob->bite(*drakula);
+    drakula->bite(*bob);
 
-//    std::cout<< *bob << std::endl;
-//    bob->bite(*drakula);
+    std::cout<< *bob << std::endl;
+    bob->bite(*drakula);
 //    std::cout<< *ivar << std::endl;
-//    solovey->fight(*drakula);
+    solovey->fight(*drakula);
 //    bob->fight(*drakula);
 //    std::cout<< *bob << std::endl;
-//    std::cout<< *drakula << std::endl;
+    std::cout<< *drakula << std::endl;
 //    bob->bite(*solovey);
-//    std::cout<< *solovey << std::endl;
+    std::cout<< *solovey << std::endl;
 //
 //    drakula->fight(*solovey);
 

@@ -13,7 +13,10 @@ Spellcaster::Spellcaster(const std::string &name) : Unit(
         name) {
 }
 
-void Spellcaster::cast(Unit &target) {
-    std::cout << "Magiiiiiic momeeeeent!!!!!" << std::endl;
-    target.getStatement()->magicalDamage(target.getAbility()->getDamage());
+void Spellcaster::cast(Unit &target, std::string magic) {
+    std::cout << "Magic moments..  When two hearts are caring.." << std::endl;
+    std::map<std::string, Spell*>::const_iterator pos = spellbook.find(magic);
+    std::cout << this->getName() << " spells: \"" << pos->second->getSpellText() << "\" to " << target.getName() << std::endl;
+    pos->second->magicAttack(&target);
 }
+

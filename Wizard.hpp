@@ -5,10 +5,9 @@
 #ifndef ARMY_WIZARD_HPP
 #define ARMY_WIZARD_HPP
 
+#include "CombatMage.hpp"
 
-#include "Spellcaster.hpp"
-
-class Wizard: public Spellcaster {
+class Wizard: public CombatMage {
 public:
     Wizard(const std::string &name);
 

@@ -3,13 +3,18 @@
 //
 
 #include "Spell.hpp"
+#include "Fireball.hpp"
 
-Spell::Spell(const std::string &spellname) : spellname(spellname) {}
+std::map<std::string, SpellType*>Spell::SpellBookConfig = {{"FIREBALL",new SpellType(10, "Gori gori yasno so as don't pogaslo!")},
+
+};
 
 Spell::~Spell() {
-
 }
 
-const std::string &Spell::getSpellname() const {
-    return spellname;
+const std::string &Spell::getSpellText() const {
+    return spellText;
+}
+
+Spell::Spell() {
 }

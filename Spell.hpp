@@ -7,18 +7,27 @@
 
 
 #include <string>
+#include "Unit.hpp"
+#include "SpellType.hpp"
+#include <map>
 
 class Spell {
 protected:
-    const std::string& spellname;
 
+
+
+    double spellPower;
+
+    std::string spellText;
 public:
-    Spell(const std::string &spellname);
+    const std::string &getSpellText() const;
+    Spell();
+    static std::map<std::string, SpellType*>SpellBookConfig;
 
     virtual ~Spell();
 
-    const std::string &getSpellname() const;
-
+    virtual void magicAttack(Unit* target) = 0;
+//    virtual void magicHeal(Unit* target);
 };
 
 
