@@ -13,7 +13,7 @@
 
 class Spell {
 protected:
-
+//    std::map<std::string, Spell*> spellbook;
 
 
     double spellPower;

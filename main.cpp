@@ -9,12 +9,13 @@
 #include "Healer.hpp"
 #include "Werewolf.hpp"
 #include "Priest.hpp"
+#include "Warlock.hpp"
 
 
 int main() {
 
     Werewolf* lupin = new Werewolf("Remus Lupin");
-
+    Warlock* sigillum = new Warlock("Sigillum");
     Vampire *drakula = new Vampire("Drakula");
     Healer* avicenna = new Healer("Ibn-Sina");
     Wizard* gendalf = new Wizard("Gendalf");
@@ -23,8 +24,22 @@ int main() {
     Priest* kostya = new Priest("Konstantin");
 
 //    kostya->fight(*bob);
+    sigillum->fight(*bob);
+    std::cout<< *bob << std::endl;
+    sigillum->cast(*bob, "AVADAKEDAVRA");
+    std::cout<< *bob << std::endl;
+    sigillum->cast(*bob, "FIREBALL");
+    std::cout<< *bob << std::endl;
 
 
+    sigillum->callDemon("demon");
+    std::cout << *sigillum->getDemon("demon") << std::endl;
+    sigillum->getDemon("demon")->fight(*bob);
+    std::cout << *sigillum->getDemon("demon") << std::endl;
+
+
+
+//    demon->fight(*drakula);
 //    kostya->fight(*drakula);
     kostya->cast(*drakula, "EXORCISM");
     std::cout<< *kostya << std::endl;
