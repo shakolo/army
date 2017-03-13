@@ -22,21 +22,37 @@ int main() {
     lupin->fight(*bob);
     std::cout<< *bob << std::endl;
 
+    lupin->transform();
+    lupin->fight(*bob);
+    std::cout<< *bob << std::endl;
+
+    bob->fight(*lupin);
+    std::cout<< *lupin << std::endl;
+
+    bob->transform();
+    std::cout<< *bob << std::endl;
     lupin->bite(*bob);
+
+    bob->transform();
     std::cout<< *bob << std::endl;
-
-    bob->bite(*drakula);
-    std::cout<< *drakula << std::endl;
-
-    lupin->bite(*bob);
+    bob->transform();
     std::cout<< *bob << std::endl;
-
-    drakula->bite(*bob);
-    std::cout<< *bob << std::endl;
-
-    std::cout<< *lupin  << std::endl;
-    gendalf->cast(*lupin, "FIREBALL");
-    std::cout<< *lupin  << std::endl;
+//
+//    lupin->bite(*bob);
+//    std::cout<< *bob << std::endl;
+//
+//    bob->bite(*drakula);
+//    std::cout<< *drakula << std::endl;
+//
+//    lupin->bite(*bob);
+//    std::cout<< *bob << std::endl;
+//
+//    drakula->bite(*bob);
+//    std::cout<< *bob << std::endl;
+//
+//    std::cout<< *lupin  << std::endl;
+//    gendalf->cast(*lupin, "FIREBALL");
+//    std::cout<< *lupin  << std::endl;
 //
 //    std::cout<< *ivar  << std::endl;
 //    avicenna->cast(*ivar, "AVADAKEDAVRA");

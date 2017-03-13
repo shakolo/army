@@ -36,6 +36,7 @@ public:
     void setAbility(Ability*);
     virtual void fight(Unit &enemy);
     virtual void bite(Unit &enemy);
+    virtual void transform();
 
     virtual std::string getName();
     virtual void setName(const std::string& name);

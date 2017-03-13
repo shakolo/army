@@ -9,7 +9,13 @@
 #include "Ability.hpp"
 
 class AbilityWerewolf: public Ability {
+private:
+    bool isWolf;
 public:
+    bool getIsIsWolf() const;
+
+    void setIsWolf(bool);
+
     AbilityWerewolf(Unit *owner, double damage, double counterattackDamage);
     void attack(Unit *attacker, Unit *target);
     void counterattack(Unit* counterattacker, Unit *target);

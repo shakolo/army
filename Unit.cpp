@@ -84,6 +84,11 @@ void Unit::fight(Unit &enemy) {
     std::cout << std::endl;
 }
 
+void Unit::transform() {
+    std::cout << this->getName() <<" try transform:" <<std::endl;
+    this->getAbility()->transform();
+}
+
 std::ostream &operator<<(std::ostream &out, Unit &unit) {
     out<< std::endl;
     out << "Unit name: " << unit.getName() << std::endl;

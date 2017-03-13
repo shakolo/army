@@ -27,6 +27,7 @@ public:
     virtual void attack(Unit*,Unit*) = 0;
     virtual void counterattack(Unit*,Unit*) = 0;
     virtual void infect(Unit*,Unit*);
+    virtual void transform();
 
     virtual ~Ability();
 

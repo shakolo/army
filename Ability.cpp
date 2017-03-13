@@ -36,4 +36,9 @@ void Ability::setCounterattackDamage(double counterattackDamage) {
     Ability::counterattackDamage = counterattackDamage;
 }
 
+void Ability::transform() {
+    std::cout << "You looked at the Transformers too much, man." <<std::endl;
+    std::cout << std::endl;
+}
+
 

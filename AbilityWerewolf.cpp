@@ -11,6 +11,8 @@ AbilityWerewolf::AbilityWerewolf(Unit *owner, double damage, double counterattac
 void AbilityWerewolf::attack(Unit *attacker, Unit *target) {
     std::cout<< "Werewolf attack succes: " << target->getName()<<" lost -"<< this->getDamage() << " hp" << std::endl;
     target->getStatement()->physicalDamage(this->getDamage());
+    target->getStatement()->isAlive();
+    target->getAbility()->counterattack(target,attacker);
 }
 
 void AbilityWerewolf::counterattack(Unit *counterattacker, Unit *target) {
@@ -19,7 +21,18 @@ void AbilityWerewolf::counterattack(Unit *counterattacker, Unit *target) {
 }
 
 void AbilityWerewolf::transform() {
-
+    std::cout << " transform active to:" << std::endl;
+    if (this->getIsIsWolf()) {
+        std::cout <<"Werewolf comeback" << std::endl;
+        this->setDamage(this->getDamage()/2);
+        this->setCounterattackDamage(this->getCounterattackDamage()/2);
+        this->setIsWolf(0);
+    } else {
+        std::cout << "Big Bad Wolf! " << std::endl;
+        this->setDamage(this->getDamage()*2);
+        this->setCounterattackDamage(this->getCounterattackDamage()*2);
+        this->setIsWolf(true);
+    }
 }
 
 void AbilityWerewolf::infect(Unit *attacker, Unit *target) {
@@ -41,6 +54,14 @@ void AbilityWerewolf::infect(Unit *attacker, Unit *target) {
     } else {
         std::cout << target->getName() << ": You can bite your own tail, fleasy friend! I'm a werewolf." << std::endl;
     }
+}
+
+bool AbilityWerewolf::getIsIsWolf() const {
+    return isWolf;
+}
+
+void AbilityWerewolf::setIsWolf(bool isWolf) {
+    AbilityWerewolf::isWolf = isWolf;
 }
 
 
