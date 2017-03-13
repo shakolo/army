@@ -8,6 +8,7 @@
 State::State(double hpmax) : hpmax(hpmax) {
     hp = hpmax;
     isVampire = false;
+    isUndead = false;
 }
 
 State::~State() {
@@ -67,4 +68,12 @@ void State::setIsWerewolf() {
 
 void State::transform() {
 
+}
+
+bool State::getIsUndead() const {
+    return isUndead;
+}
+
+void State::setIsUndead(bool isUndead) {
+   this->isUndead = isUndead;
 }

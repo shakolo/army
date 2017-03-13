@@ -7,11 +7,12 @@
 
 
 #include "Spellcaster.hpp"
+#include "StateSpellcaster.hpp"
+#include "AbilityPriest.hpp"
 
 class HealerMage: public Spellcaster {
 public:
     HealerMage(const std::string &name);
-
 
     void cast(Unit &target, std::string magic);
 };

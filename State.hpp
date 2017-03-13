@@ -12,8 +12,12 @@ protected:
     double hpmax;
     bool isVampire;
     bool isWerewolf;
-
+    bool isUndead;
 public:
+    bool getIsUndead() const;
+
+    void setIsUndead(bool isUndead);
+
     State(double hpmax);
 
     double getHP();

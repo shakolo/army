@@ -7,7 +7,6 @@
 
 
 StateVampire::StateVampire(double hpmax) : State(hpmax) {
-
 }
 
 void StateVampire::vampireDrinks(double blood) {

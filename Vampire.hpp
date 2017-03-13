@@ -10,6 +10,7 @@
 #include "AbilityVampire.hpp"
 #include "StateVampire.hpp"
 
+
 class Vampire: public Unit {
 public:
     Vampire(const std::string &name);

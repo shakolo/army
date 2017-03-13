@@ -20,3 +20,4 @@ void HealerMage::cast(Unit &target, std::string magic) {
         pos->second->setSpellPower(pos->second->getSpellPower()*2);
     }
 }
+

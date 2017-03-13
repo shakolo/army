@@ -27,6 +27,7 @@ Unit::Unit(const std::string& type, State *statement, Ability *ability, const st
         name(name)
 {
     std::cout << "Unit created: " << this->getName() << std::endl;
+    this->statement->setIsUndead(0);
 }
 
 Unit::~Unit() {
@@ -104,6 +105,7 @@ std::ostream &operator<<(std::ostream &out, Unit &unit) {
     out << "ability damage: " << unit.getAbility()->getDamage() << std::endl;
     out << "ability counterattackDamage: " << unit.getAbility()->getCounterattackDamage() << std::endl;
     out << "isVampire " << unit.getStatement()->getIsVampire() <<std::endl;
+    out << "isUndead " << unit.getStatement()->getIsUndead() <<std::endl;
     out<< std::endl;
     return out;
 }

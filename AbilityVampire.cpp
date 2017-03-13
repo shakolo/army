@@ -47,6 +47,7 @@ void AbilityVampire::infect(Unit* attacker, Unit* target) {
         target->setStatement(new StateVampire(target->UnitTypesConfig["Vampire"]->getHpmax()));
         target->getStatement()->setHP(currentHp);
         target->getStatement()->setIsVampire();
+        target->getStatement()->setIsUndead(true);
         std::cout << attacker->getName() << " infected " << target->getName() << std::endl;
         std::cout << std::endl;
     } else if(target->getStatement()->getIsVampire()) {

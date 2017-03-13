@@ -8,9 +8,11 @@
 #include "Wizard.hpp"
 #include "Healer.hpp"
 #include "Werewolf.hpp"
+#include "Priest.hpp"
 
 
 int main() {
+
     Werewolf* lupin = new Werewolf("Remus Lupin");
 
     Vampire *drakula = new Vampire("Drakula");
@@ -18,35 +20,47 @@ int main() {
     Wizard* gendalf = new Wizard("Gendalf");
     Soldier* bob = new Soldier("Bob");
     Berserker* ivar = new Berserker("Ivar");
+    Priest* kostya = new Priest("Konstantin");
 
-    lupin->fight(*bob);
+//    kostya->fight(*bob);
+
+
+//    kostya->fight(*drakula);
+    kostya->cast(*drakula, "EXORCISM");
+    std::cout<< *kostya << std::endl;
+    std::cout<< *drakula << std::endl;
+//    drakula->fight(*kostya);
+    kostya->cast(*bob, "EXORCISM");
     std::cout<< *bob << std::endl;
 
-    lupin->transform();
-    std::cout<< *lupin  << std::endl;
-    lupin->fight(*bob);
-    std::cout<< *bob << std::endl;
-
-    bob->fight(*lupin);
-    std::cout<< *lupin << std::endl;
-
-    bob->transform();
-    std::cout<< *bob << std::endl;
-    lupin->bite(*bob);
-    std::cout<< *bob  << std::endl;
-    bob->transform();
-    gendalf->cast(*bob, "FIREBALL");
-    std::cout<< *bob  << std::endl;
-
-    avicenna->cast(*bob, "AVADAKEDAVRA");
-    std::cout<< *bob  << std::endl;
-
-    bob->transform();
-    std::cout<< *bob << std::endl;
-    bob->transform();
-    std::cout<< *bob << std::endl;
-
-        std::cout<< *lupin  << std::endl;
+//    lupin->fight(*bob);
+//    std::cout<< *bob << std::endl;
+//
+//    lupin->transform();
+//    std::cout<< *lupin  << std::endl;
+//    lupin->fight(*bob);
+//    std::cout<< *bob << std::endl;
+//
+//    bob->fight(*lupin);
+//    std::cout<< *lupin << std::endl;
+//
+//    bob->transform();
+//    std::cout<< *bob << std::endl;
+//    lupin->bite(*bob);
+//    std::cout<< *bob  << std::endl;
+//    bob->transform();
+//    gendalf->cast(*bob, "FIREBALL");
+//    std::cout<< *bob  << std::endl;
+//
+//    avicenna->cast(*bob, "AVADAKEDAVRA");
+//    std::cout<< *bob  << std::endl;
+//
+//    bob->transform();
+//    std::cout<< *bob << std::endl;
+//    bob->transform();
+//    std::cout<< *bob << std::endl;
+//
+//        std::cout<< *lupin  << std::endl;
 
 //
 //    lupin->bite(*bob);
