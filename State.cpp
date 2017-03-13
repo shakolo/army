@@ -57,3 +57,11 @@ void State::addHP(double hp) {
     }
 }
 
+bool State::getIsWerewolf() {
+    return isWerewolf;
+}
+
+void State::setIsWerewolf() {
+    isWerewolf = true;
+}
+

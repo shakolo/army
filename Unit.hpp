@@ -18,6 +18,7 @@ class Unit {
 private:
     std::string name;
     std::string type;
+
 protected:
     State* statement;
     Ability* ability;

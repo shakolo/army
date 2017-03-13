@@ -11,6 +11,8 @@ protected:
     double hp;
     double hpmax;
     bool isVampire;
+    bool isWerewolf;
+
 public:
     State(double hpmax);
 
@@ -30,6 +32,10 @@ public:
     void setHP(double d);
 
     void addHP(double hp);
+
+    bool getIsWerewolf();
+
+    void setIsWerewolf();
 };
 
 

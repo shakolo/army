@@ -18,5 +18,5 @@ void StateBerserker::vampireDrinks(double) {
 }
 
 void StateBerserker::magicalInfluence(double dmg) {
-    std::cout << "Berseker: Odin protect me! Tremble witch!"<<  std::endl;
+    std::cout << "Berseker: Odin protect me! Trembling witch!"<<  std::endl;
 }

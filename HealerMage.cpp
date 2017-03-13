@@ -9,7 +9,7 @@ HealerMage::HealerMage(const std::string &name) : Spellcaster(name) {
 }
 
 void HealerMage::cast(Unit &target, std::string magic) {
-    std::cout << "Magic moments..  When two hearts are caring.." << std::endl;
+    std::cout << "Some music starts to play: Magic moments..  When two hearts are caring.." << std::endl;
     std::map<std::string, Spell*>::const_iterator pos = spellbook.find(magic);
     std::cout << this->getName() << " spells: \"" << pos->second->getSpellText() << "\" to " << target.getName() << std::endl;
     if (pos->second->getSpellPower() >= 0) {

@@ -36,7 +36,7 @@ void AbilityVampire::counterattack(Unit* attacker, Unit *target) {
 }
 
 void AbilityVampire::infect(Unit* attacker, Unit* target) {
-    if (!target->getStatement()->getIsVampire()) {
+    if (!target->getStatement()->getIsVampire() && !target->getStatement()->getIsWerewolf()) {
 
         target->getStatement()->isAlive();
         target->setType(target->UnitTypesConfig["Vampire"]->getNameUT());
@@ -49,8 +49,10 @@ void AbilityVampire::infect(Unit* attacker, Unit* target) {
         target->getStatement()->setIsVampire();
         std::cout << attacker->getName() << " infected " << target->getName() << std::endl;
         std::cout << std::endl;
-    } else {
+    } else if(target->getStatement()->getIsVampire()) {
         std::cout << target->getName() << ": You can bite your heel, stupid idiot! I'm already a vampire." << std::endl;
+    } else {
+        std::cout << target->getName() << ": Scratch my back with your fangs! I'm a werewolf." << std::endl;
     }
 
 }

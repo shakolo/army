@@ -7,71 +7,91 @@
 #include "Vampire.hpp"
 #include "Wizard.hpp"
 #include "Healer.hpp"
+#include "Werewolf.hpp"
 
 
 int main() {
+    Werewolf* lupin = new Werewolf("Remus Lupin");
+
     Vampire *drakula = new Vampire("Drakula");
     Healer* avicenna = new Healer("Ibn-Sina");
     Wizard* gendalf = new Wizard("Gendalf");
     Soldier* bob = new Soldier("Bob");
     Berserker* ivar = new Berserker("Ivar");
-    std::cout<< *ivar  << std::endl;
-    gendalf->cast(*ivar, "FIREBALL");
 
-    std::cout<< *ivar  << std::endl;
-    avicenna->cast(*ivar, "AVADAKEDAVRA");
-    std::cout<< *ivar  << std::endl;
-
-    std::cout<< *ivar  << std::endl;
-    gendalf->cast(*ivar, "FIREBALL");
-
-    std::cout<< *bob << std::endl;
-    avicenna->cast(*bob, "AVADAKEDAVRA");
+    lupin->fight(*bob);
     std::cout<< *bob << std::endl;
 
-    std::cout<< *bob << std::endl;
-    avicenna->cast(*bob, "FIREBALL");
-
-
-    std::cout<< *bob << std::endl;
-    gendalf->cast(*bob, "AVADAKEDAVRA");
+    lupin->bite(*bob);
     std::cout<< *bob << std::endl;
 
-    gendalf->fight(*bob);
-    std::cout<< *bob << std::endl;
-    std::cout<< *gendalf << std::endl;
+    bob->bite(*drakula);
+    std::cout<< *drakula << std::endl;
 
-    bob->fight(*gendalf);
-    std::cout<< *bob << std::endl;
-    std::cout<< *gendalf << std::endl;
-
-    drakula->bite(*gendalf);
-    std::cout<< *gendalf << std::endl;
-
-    gendalf->cast(*bob, "AVADAKEDAVRA");
+    lupin->bite(*bob);
     std::cout<< *bob << std::endl;
 
-    avicenna->cast(*bob, "AVADAKEDAVRA");
-    std::cout<< *bob << std::endl;
-    gendalf->cast(*bob, "FIREBALL");
-
-    std::cout<< *bob << std::endl;
-    avicenna->cast(*bob, "FIREBALL");
-
-
-    std::cout<< *bob << std::endl;
-    gendalf->cast(*bob, "AVADAKEDAVRA");
+    drakula->bite(*bob);
     std::cout<< *bob << std::endl;
 
-    avicenna->cast(*bob, "AVADAKEDAVRA");
-    std::cout<< *bob << std::endl;
-    gendalf->cast(*bob, "FIREBALL");
-
-    std::cout<< *bob << std::endl;
-    avicenna->cast(*bob, "FIREBALL");
-
-
-    std::cout<< *bob << std::endl;
+    std::cout<< *lupin  << std::endl;
+    gendalf->cast(*lupin, "FIREBALL");
+    std::cout<< *lupin  << std::endl;
+//
+//    std::cout<< *ivar  << std::endl;
+//    avicenna->cast(*ivar, "AVADAKEDAVRA");
+//    std::cout<< *ivar  << std::endl;
+//
+//    std::cout<< *ivar  << std::endl;
+//    gendalf->cast(*ivar, "FIREBALL");
+//
+//    std::cout<< *bob << std::endl;
+//    avicenna->cast(*bob, "AVADAKEDAVRA");
+//    std::cout<< *bob << std::endl;
+//
+//    std::cout<< *bob << std::endl;
+//    avicenna->cast(*bob, "FIREBALL");
+//
+//
+//    std::cout<< *bob << std::endl;
+//    gendalf->cast(*bob, "AVADAKEDAVRA");
+//    std::cout<< *bob << std::endl;
+//
+//    gendalf->fight(*bob);
+//    std::cout<< *bob << std::endl;
+//    std::cout<< *gendalf << std::endl;
+//
+//    bob->fight(*gendalf);
+//    std::cout<< *bob << std::endl;
+//    std::cout<< *gendalf << std::endl;
+//
+//    drakula->bite(*gendalf);
+//    std::cout<< *gendalf << std::endl;
+//
+//    gendalf->cast(*bob, "AVADAKEDAVRA");
+//    std::cout<< *bob << std::endl;
+//
+//    avicenna->cast(*bob, "AVADAKEDAVRA");
+//    std::cout<< *bob << std::endl;
+//    gendalf->cast(*bob, "FIREBALL");
+//
+//    std::cout<< *bob << std::endl;
+//    avicenna->cast(*bob, "FIREBALL");
+//
+//
+//    std::cout<< *bob << std::endl;
+//    gendalf->cast(*bob, "AVADAKEDAVRA");
+//    std::cout<< *bob << std::endl;
+//
+//    avicenna->cast(*bob, "AVADAKEDAVRA");
+//    std::cout<< *bob << std::endl;
+//    gendalf->cast(*bob, "FIREBALL");
+//
+//    std::cout<< *bob << std::endl;
+//    avicenna->cast(*bob, "FIREBALL");
+//
+//
+//    std::cout<< *bob << std::endl;
 //    gendalf->bite(*bob);
 //    std::cout<< *bob << std::endl;
 
