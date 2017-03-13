@@ -14,8 +14,16 @@ int main() {
     Healer* avicenna = new Healer("Ibn-Sina");
     Wizard* gendalf = new Wizard("Gendalf");
     Soldier* bob = new Soldier("Bob");
-    std::cout<< *bob << std::endl;
-    gendalf->cast(*bob, "FIREBALL");
+    Berserker* ivar = new Berserker("Ivar");
+    std::cout<< *ivar  << std::endl;
+    gendalf->cast(*ivar, "FIREBALL");
+
+    std::cout<< *ivar  << std::endl;
+    avicenna->cast(*ivar, "AVADAKEDAVRA");
+    std::cout<< *ivar  << std::endl;
+
+    std::cout<< *ivar  << std::endl;
+    gendalf->cast(*ivar, "FIREBALL");
 
     std::cout<< *bob << std::endl;
     avicenna->cast(*bob, "AVADAKEDAVRA");
