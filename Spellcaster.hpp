@@ -15,7 +15,7 @@ protected:
 
 public:
     Spellcaster(const std::string &name);
-    virtual void cast(Unit& target, std::string magic);
+    virtual void cast(Unit& target, std::string magic) = 0;
 };
 
 std::ostream &operator<<(std::ostream &out, Spellcaster &unit);

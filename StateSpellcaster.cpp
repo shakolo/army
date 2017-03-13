@@ -4,6 +4,5 @@
 
 #include "StateSpellcaster.hpp"
 
-StateSpellcaster::StateSpellcaster(double hpmax) : StateDefault(hpmax) {
-
+StateSpellcaster::StateSpellcaster(double hpmax) : StateDefault(hpmax * 0.75) {
 }

@@ -14,18 +14,18 @@ Spellcaster::Spellcaster(const std::string &name) : Unit(
         name) {
 }
 
-void Spellcaster::cast(Unit &target, std::string magic) {
-    std::cout << "Magic moments..  When two hearts are caring.." << std::endl;
-    std::map<std::string, Spell*>::const_iterator pos = spellbook.find(magic);
-    if (pos->second == 0) {
-        spellbook.insert(std::pair<std::string, Spell*>(magic, new ZeroSpell));
-        std::map<std::string, Spell*>::const_iterator posnew = spellbook.find(magic);
-        pos = posnew;
-    }
-    std::cout << this->getName() << " spells: \"" << pos->second->getSpellText() << "\" to " << target.getName() << std::endl;
-    pos->second->magic(&target);
-
-}
+//void Spellcaster::cast(Unit &target, std::string magic) {
+//    std::cout << "Magic moments..  When two hearts are caring.." << std::endl;
+//    std::map<std::string, Spell*>::const_iterator pos = spellbook.find(magic);
+//    if (pos->second == 0) {
+//        spellbook.insert(std::pair<std::string, Spell*>(magic, new ZeroSpell));
+//        std::map<std::string, Spell*>::const_iterator posnew = spellbook.find(magic);
+//        pos = posnew;
+//    }
+//    std::cout << this->getName() << " spells: \"" << pos->second->getSpellText() << "\" to " << target.getName() << std::endl;
+//    pos->second->magic(&target);
+//
+//}
 
 
 std::ostream &operator<<(std::ostream &out, Spellcaster &unit) {

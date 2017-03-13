@@ -12,6 +12,9 @@ class AbilitySpellcaster: public AbilityDefault {
 public:
     AbilitySpellcaster(Unit *, double damage, double counterattackDamage);
 
+    void attack(Unit*, Unit* );
+    void counterattack(Unit*, Unit*);
+
 };
 
 

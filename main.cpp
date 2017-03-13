@@ -10,6 +10,7 @@
 
 
 int main() {
+    Vampire *drakula = new Vampire("Drakula");
     Healer* avicenna = new Healer("Ibn-Sina");
     Wizard* gendalf = new Wizard("Gendalf");
     Soldier* bob = new Soldier("Bob");
@@ -28,9 +29,60 @@ int main() {
     gendalf->cast(*bob, "AVADAKEDAVRA");
     std::cout<< *bob << std::endl;
 
+    gendalf->fight(*bob);
+    std::cout<< *bob << std::endl;
+    std::cout<< *gendalf << std::endl;
+
+    bob->fight(*gendalf);
+    std::cout<< *bob << std::endl;
+    std::cout<< *gendalf << std::endl;
+
+    drakula->bite(*gendalf);
+    std::cout<< *gendalf << std::endl;
+
+    gendalf->cast(*bob, "AVADAKEDAVRA");
+    std::cout<< *bob << std::endl;
+
+    avicenna->cast(*bob, "AVADAKEDAVRA");
+    std::cout<< *bob << std::endl;
+    gendalf->cast(*bob, "FIREBALL");
+
+    std::cout<< *bob << std::endl;
+    avicenna->cast(*bob, "FIREBALL");
+
+
+    std::cout<< *bob << std::endl;
+    gendalf->cast(*bob, "AVADAKEDAVRA");
+    std::cout<< *bob << std::endl;
+
+    avicenna->cast(*bob, "AVADAKEDAVRA");
+    std::cout<< *bob << std::endl;
+    gendalf->cast(*bob, "FIREBALL");
+
+    std::cout<< *bob << std::endl;
+    avicenna->cast(*bob, "FIREBALL");
+
+
+    std::cout<< *bob << std::endl;
+//    gendalf->bite(*bob);
+//    std::cout<< *bob << std::endl;
+
+//
+//    Rogue* solovey = new Rogue("Solovey");
+//    std::cout<< *solovey << std::endl;
+//    solovey->fight(*gendalf);
+//    std::cout<< *gendalf << std::endl;
+//    gendalf->bite(*solovey);
+//
+//    std::cout<< *solovey << std::endl;
+//    solovey->fight(*gendalf);
+//    std::cout<< *gendalf << std::endl;
+//
+
+
 //    Berserker* ivar = new Berserker("Ivar");
 //    Soldier* john = new Soldier("John");
-//    Vampire *drakula = new Vampire("Drakula");
+//
 //    Rogue* solovey = new Rogue("Solovey");
 //    std::cout<< *drakula << std::endl;
 //    std::cout<< *solovey << std::endl;
