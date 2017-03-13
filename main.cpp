@@ -23,6 +23,7 @@ int main() {
     std::cout<< *bob << std::endl;
 
     lupin->transform();
+    std::cout<< *lupin  << std::endl;
     lupin->fight(*bob);
     std::cout<< *bob << std::endl;
 
@@ -32,11 +33,21 @@ int main() {
     bob->transform();
     std::cout<< *bob << std::endl;
     lupin->bite(*bob);
+    std::cout<< *bob  << std::endl;
+    bob->transform();
+    gendalf->cast(*bob, "FIREBALL");
+    std::cout<< *bob  << std::endl;
+
+    avicenna->cast(*bob, "AVADAKEDAVRA");
+    std::cout<< *bob  << std::endl;
 
     bob->transform();
     std::cout<< *bob << std::endl;
     bob->transform();
     std::cout<< *bob << std::endl;
+
+        std::cout<< *lupin  << std::endl;
+
 //
 //    lupin->bite(*bob);
 //    std::cout<< *bob << std::endl;

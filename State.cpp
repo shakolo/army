@@ -65,3 +65,6 @@ void State::setIsWerewolf() {
     isWerewolf = true;
 }
 
+void State::transform() {
+
+}

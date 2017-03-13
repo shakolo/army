@@ -87,6 +87,12 @@ void Unit::fight(Unit &enemy) {
 void Unit::transform() {
     std::cout << this->getName() <<" try transform:" <<std::endl;
     this->getAbility()->transform();
+    this->getStatement()->transform();
+    if (this->getType() == "Werewolf") {
+        this->setType("Wolf");
+    } else if (this->getType() == "Wolf") {
+        this->setType("Werewolf");
+    }
 }
 
 std::ostream &operator<<(std::ostream &out, Unit &unit) {
@@ -94,6 +100,7 @@ std::ostream &operator<<(std::ostream &out, Unit &unit) {
     out << "Unit name: " << unit.getName() << std::endl;
     out << "Unit type: " << unit.getType() << std::endl;
     out << "state hp: " << unit.getStatement()->getHP() << std::endl;
+    out << "state hpmax: " << unit.getStatement()->getHPM() << std::endl;
     out << "ability damage: " << unit.getAbility()->getDamage() << std::endl;
     out << "ability counterattackDamage: " << unit.getAbility()->getCounterattackDamage() << std::endl;
     out << "isVampire " << unit.getStatement()->getIsVampire() <<std::endl;

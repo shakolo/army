@@ -22,6 +22,7 @@ public:
     virtual void physicalDamage(double) = 0;
     virtual void magicalInfluence(double) = 0;
     virtual void vampireDrinks(double) = 0;
+    virtual void transform();
     bool getIsVampire();
     void setIsVampire();
     virtual ~State();
@@ -36,6 +37,8 @@ public:
     bool getIsWerewolf();
 
     void setIsWerewolf();
+
+
 };
 
 
