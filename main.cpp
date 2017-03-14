@@ -10,10 +10,11 @@
 #include "Werewolf.hpp"
 #include "Priest.hpp"
 #include "Warlock.hpp"
+#include "Necromancer.hpp"
 
 
 int main() {
-
+    Necromancer* caliostro = new Necromancer("Caliostro");
     Werewolf* lupin = new Werewolf("Remus Lupin");
     Warlock* sigillum = new Warlock("Sigillum");
     Vampire *drakula = new Vampire("Drakula");
@@ -23,32 +24,46 @@ int main() {
     Berserker* ivar = new Berserker("Ivar");
     Priest* kostya = new Priest("Konstantin");
 
-//    kostya->fight(*bob);
+    std::cout<< *caliostro << std::endl;
+    bob->fight(*caliostro);
+    std::cout<< *caliostro << std::endl;
+    caliostro->fight(*bob);
+    std::cout<< *bob << std::endl;
+
+    kostya->fight(*bob);
     sigillum->fight(*bob);
     std::cout<< *bob << std::endl;
-    sigillum->cast(*bob, "AVADAKEDAVRA");
-    std::cout<< *bob << std::endl;
-    sigillum->cast(*bob, "FIREBALL");
-    std::cout<< *bob << std::endl;
-
-
+////    sigillum->cast(*bob, "AVADAKEDAVRA");
+////    std::cout<< *bob << std::endl;
+////    sigillum->cast(*bob, "FIREBALL");
+////    std::cout<< *bob << std::endl;
+//
+////
     sigillum->callDemon("demon1");
-    sigillum->callDemon("demon2");
-    std::cout << *sigillum->getDemon("demon1") << std::endl;
-    sigillum->getDemon("demon1")->fight(*bob);
+////    sigillum->callDemon("demon2");
+////    std::cout << *sigillum->getDemon("demon1") << std::endl;
+    sigillum->getDemon("demon1")->possession(*bob);
     std::cout<< *bob << std::endl;
-    sigillum->getDemon("demon2")->fight(*bob);
+    drakula->fight(*bob);
     std::cout<< *bob << std::endl;
-
+    std::cout<< *caliostro << std::endl;
+//    sigillum->getDemon("demon2")->fight(*bob);
+//    std::cout<< *bob << std::endl;
+//    sigillum->getDemon("demon2")->fight(*bob);
+//    std::cout<< *bob << std::endl;
+//    sigillum->getDemon("demon2")->fight(*bob);
+//    std::cout<< *bob << std::endl;
+//    sigillum->getDemon("demon2")->fight(*bob);
+//    std::cout<< *bob << std::endl;
 
 //    demon->fight(*drakula);
 //    kostya->fight(*drakula);
-    kostya->cast(*drakula, "EXORCISM");
-    std::cout<< *kostya << std::endl;
-    std::cout<< *drakula << std::endl;
-//    drakula->fight(*kostya);
-    kostya->cast(*bob, "EXORCISM");
-    std::cout<< *bob << std::endl;
+//    kostya->cast(*drakula, "EXORCISM");
+//    std::cout<< *kostya << std::endl;
+//    std::cout<< *drakula << std::endl;
+////    drakula->fight(*kostya);
+//    kostya->cast(*bob, "EXORCISM");
+//    std::cout<< *bob << std::endl;
 
 //    lupin->fight(*bob);
 //    std::cout<< *bob << std::endl;

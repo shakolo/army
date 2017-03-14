@@ -41,4 +41,10 @@ void Ability::transform() {
     std::cout << std::endl;
 }
 
+void Ability::addVictims(Unit *pUnit, Unit *pUnit1) {
+
+}
+
+
+
 

@@ -10,6 +10,7 @@
 #include "UnitType.hpp"
 #include <string>
 #include <map>
+#include <set>
 
 class Ability;
 class State;
@@ -22,6 +23,7 @@ private:
 protected:
     State* statement;
     Ability* ability;
+    std::set<Unit*> observers;
 
 public:
     const std::string &getType() const;
@@ -40,9 +42,16 @@ public:
 
     virtual std::string getName();
     virtual void setName(const std::string& name);
+
+    virtual void addVictims(Unit *pUnit);
+    void addObserver(Unit* unit);
+    void die();
+    void isAlive(Unit& );
     virtual ~Unit();
 
     static std::map<std::string, UnitType*>UnitTypesConfig;
+
+
 };
 std::ostream &operator<<(std::ostream &out, Unit &unit);
 

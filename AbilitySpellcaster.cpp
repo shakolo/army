@@ -17,3 +17,4 @@ void AbilitySpellcaster::counterattack(Unit* attacker, Unit *target) {
     std::cout<< "Spellcaster counterattacks!" << std::endl;
     target->getStatement()->physicalDamage(attacker->getAbility()->getCounterattackDamage()/2);
 }
+

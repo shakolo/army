@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include "Unit.hpp"
+//#include <set>
 const double globalHP = 100;
 const double globalDMG = 20;
 const double globalCounterattackDMG = 4;
@@ -81,7 +82,9 @@ void Unit::fight(Unit &enemy) {
     this->statement->isAlive();
     std::cout << std::endl;
     std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
+
     this->getAbility()->attack(this, &enemy);
+    isAlive(enemy);
     std::cout << std::endl;
 }
 
@@ -94,6 +97,33 @@ void Unit::transform() {
     } else if (this->getType() == "Wolf") {
         this->setType("Werewolf");
     }
+}
+
+void Unit::addObserver(Unit* unit) {
+    std::cout << "addObserver!" << std::endl;
+    observers.insert(unit);
+}
+
+void Unit::die() {
+    std::cout << "Unit die!" << std::endl;
+    for (std::set<Unit*>::iterator it = observers.begin(); it != observers.end(); it++ ) {
+        std::cout << "Observer!" << std::endl;
+        Unit* unit = *it;
+        std::cout << unit->getName() << " add him my life +10 " << std::endl;
+        unit->getStatement()->addHP(10);
+    }
+}
+
+void Unit::isAlive(Unit& enemy) {
+    std::cout << "isAlive!" << std::endl;
+    if(enemy.getStatement()->getHP()<= 0) {
+        enemy.die();
+//        enemy.getStatement()->setHP(0);
+    }
+}
+
+void Unit::addVictims(Unit *pUnit) {
+    std::cout << "You are not necromaner, you are necrophile!" << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, Unit &unit) {

@@ -7,6 +7,7 @@
 
 
 #include "AbilityDefault.hpp"
+#include "Necromancer.hpp"
 
 class AbilitySpellcaster: public AbilityDefault {
 public:

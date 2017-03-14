@@ -34,6 +34,7 @@ public:
     double getDamage();
     double getCounterattackDamage() const;
 
+    virtual void addVictims(Unit *pUnit, Unit *pUnit1);
 };
 
 #endif //ARMY_ABILITY_HPP

@@ -30,7 +30,6 @@ void State::isAlive() {
         //throw UnitIsDeadException("Yes, man is mortal, but it would not be so sad. The bad thing is that sometimes it is suddenly mortal.");
         std::cout << "Yes, man is mortal, but it would not be so sad. The bad thing is that sometimes it is suddenly mortal." << std::endl;
     }
-    //return hp > 0;
 }
 
 void State::setIsVampire() {
