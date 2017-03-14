@@ -32,11 +32,13 @@ int main() {
     std::cout<< *bob << std::endl;
 
 
-    sigillum->callDemon("demon");
-    std::cout << *sigillum->getDemon("demon") << std::endl;
-    sigillum->getDemon("demon")->fight(*bob);
-    std::cout << *sigillum->getDemon("demon") << std::endl;
-
+    sigillum->callDemon("demon1");
+    sigillum->callDemon("demon2");
+    std::cout << *sigillum->getDemon("demon1") << std::endl;
+    sigillum->getDemon("demon1")->fight(*bob);
+    std::cout<< *bob << std::endl;
+    sigillum->getDemon("demon2")->fight(*bob);
+    std::cout<< *bob << std::endl;
 
 
 //    demon->fight(*drakula);

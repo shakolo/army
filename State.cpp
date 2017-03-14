@@ -27,7 +27,8 @@ double State::getHPM() {
 void State::isAlive() {
     if ( hp <= 0 ) {
         hp = 0;
-        throw UnitIsDeadException("Yes, man is mortal, but it would not be so sad. The bad thing is that sometimes it is suddenly mortal.");
+        //throw UnitIsDeadException("Yes, man is mortal, but it would not be so sad. The bad thing is that sometimes it is suddenly mortal.");
+        std::cout << "Yes, man is mortal, but it would not be so sad. The bad thing is that sometimes it is suddenly mortal." << std::endl;
     }
     //return hp > 0;
 }
