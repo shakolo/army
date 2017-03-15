@@ -24,7 +24,7 @@ void StateVampire::physicalDamage(double dmg) {
 void StateVampire::magicalInfluence(double dmg) {
     isAlive();
     if( dmg >= 0 ) {
-        std::cout <<  "someome has magical damage and lost -"<< dmg <<" hp "<<  std::endl;
+        //std::cout <<  "someome has magical damage and lost -"<< dmg <<" hp "<<  std::endl;
         this->deductHP(dmg);
     } else {
         dmg *= -1;

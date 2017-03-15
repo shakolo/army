@@ -74,28 +74,44 @@ const std::string &Unit::getType() const {
 }
 
 void Unit::bite(Unit &enemy) {
-    std::cout << this->getName() << " bites " << enemy.getName() << std::endl;
-    this->getAbility()->infect(this, &enemy);
+    if ( this->statement->isAlive() ) {
+        std::cout << this->getName() << " bites " << enemy.getName() << std::endl;
+        this->getAbility()->infect(this, &enemy);
+    } else {
+        std::cout << this->getName()<< ", did you kill the white man who killed you?" << std::endl;
+        std::cout << std::endl;
+    }
+
 }
 
 void Unit::fight(Unit &enemy) {
-    this->statement->isAlive();
-    std::cout << std::endl;
-    std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
+    if ( this->statement->isAlive() ) {
+        std::cout << std::endl;
+        std::cout << this->getName() << " fight " << enemy.getName() << std::endl;
 
-    this->getAbility()->attack(this, &enemy);
-    isAlive(enemy);
-    std::cout << std::endl;
+        this->getAbility()->attack(this, &enemy);
+        isAlive(enemy);
+        std::cout << std::endl;
+    } else {
+        std::cout << this->getName()<< ", did you kill the white man who killed you?" << std::endl;
+        std::cout << std::endl;
+    }
+
 }
 
 void Unit::transform() {
-    std::cout << this->getName() <<" try transform:" <<std::endl;
-    this->getAbility()->transform();
-    this->getStatement()->transform();
-    if (this->getType() == "Werewolf") {
-        this->setType("Wolf");
-    } else if (this->getType() == "Wolf") {
-        this->setType("Werewolf");
+    if ( this->statement->isAlive() ) {
+        std::cout << this->getName() <<" try transform:" <<std::endl;
+        this->getAbility()->transform();
+        this->getStatement()->transform();
+        if (this->getType() == "Werewolf") {
+            this->setType("Wolf");
+        } else if (this->getType() == "Wolf") {
+            this->setType("Werewolf");
+        }
+    } else {
+        std::cout << this->getName()<< ", did you kill the white man who killed you?" << std::endl;
+        std::cout << std::endl;
     }
 }
 
@@ -115,7 +131,7 @@ void Unit::die() {
 }
 
 void Unit::isAlive(Unit& enemy) {
-    std::cout << "isAlive!" << std::endl;
+    //std::cout << "isAlive!" << std::endl;
     if(enemy.getStatement()->getHP()<= 0) {
         enemy.die();
 //        enemy.getStatement()->setHP(0);

@@ -87,10 +87,14 @@ int main() {
     gendalf->cast(*bob, "FIREBALL");
     std::cout<< *bob  << std::endl;
 
+
     gendalf->cast(*bob, "FIREBALL");
     std::cout<< *bob  << std::endl;
-
+    bob->fight(*gendalf);
 //
+    gendalf->cast(*avicenna, "FIREBALL");
+    gendalf->cast(*avicenna, "FIREBALL");
+    gendalf->cast(*avicenna, "FIREBALL");
     avicenna->cast(*bob, "AVADAKEDAVRA");
     std::cout<< *bob  << std::endl;
 //

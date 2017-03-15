@@ -21,10 +21,12 @@ void StateDefault::magicalInfluence(double dmg) {
     if( dmg >= 0 ) {
         std::cout <<  "someome has magical damage and lost -"<< dmg <<" hp "<<  std::endl;
         this->deductHP(dmg);
+        std::cout << std::endl;
     } else {
         dmg *= -1;
         std::cout <<  "someome has magical heal and got +"<< dmg <<" hp "<<  std::endl;
         this->addHP(dmg);
+        std::cout << std::endl;
     }
 }
 

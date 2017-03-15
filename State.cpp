@@ -28,8 +28,9 @@ bool State::isAlive() {
     if ( hp <= 0 ) {
         hp = 0;
         //throw UnitIsDeadException("Yes, man is mortal, but it would not be so sad. The bad thing is that sometimes it is suddenly mortal.");
-        std::cout << "Yes, man is mortal, but it would not be so sad. The bad thing is that sometimes it is suddenly mortal." << std::endl;
+        //std::cout << "Yes, man is mortal, but it would not be so sad. The bad thing is that sometimes it is suddenly mortal." << std::endl;
     }
+    return (hp > 0);
 }
 
 void State::setIsVampire() {
@@ -52,13 +53,14 @@ void State:: deductHP(double hp) {
     if (this->hp > 0 ) {
         if ((this->hp - hp) > 0 ) {
             this->hp -= hp;
-            std::cout<< "deduct hp!" << std::endl;
+            //std::cout<< "deduct hp!" << std::endl;
         } else if (this->hp - hp <= 0) {
-            std::cout<< "0!" << std::endl;
+            std::cout<< "Someone dead!" << std::endl;
             this->hp = 0;
         }
     } else {
         std::cout << "Hey, what are you doing with deadman?" << std::endl;
+        std::cout << std::endl;
     }
 }
 
@@ -67,13 +69,14 @@ void State::addHP(double hp) {
     if (this->hp > 0 ) {
         if ((this->hp + hp) <= hpmax ) {
             this->hp += hp;
-            std::cout<< "add hp!" << std::endl;
+            //std::cout<< "add hp!" << std::endl;
         } else if ((this->hp + hp) > hpmax) {
-            std::cout<< "hpmax!" << std::endl;
+            //std::cout<< "hpmax!" << std::endl;
             this->hp = hpmax;
         }
     } else {
         std::cout << "Hey, what are you doing with deadman?" << std::endl;
+        std::cout << std::endl;
     }
 }
 
