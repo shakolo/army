@@ -5,7 +5,7 @@
 #include "AvadaKedavra.hpp"
 
 void AvadaKedavra::magic(Unit* target) {
-    target->getStatement()->magicalInfluence(spellPower);
+        target->getStatement()->magicalInfluence(spellPower);
 }
 
 AvadaKedavra::AvadaKedavra() {

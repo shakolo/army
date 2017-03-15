@@ -6,7 +6,7 @@
 double globalCombatMagic = 10;
 double globalHealMagic = -10;
 
-std::map<std::string, SpellType*>Spell::SpellBookConfig = {{"FIREBALL",new SpellType(globalCombatMagic, "Gori gori yasno so as don't pogaslo!")},
+std::map<std::string, SpellType*>Spell::SpellBookConfig = {{"FIREBALL",new SpellType(50, "Gori gori yasno so as don't pogaslo!")},
                                                            {"AVADAKEDAVRA", new SpellType(globalHealMagic, "Quae dicta sunt, factum est!")},
                                                            {"EXORCISM", new SpellType(globalCombatMagic, "Exorcizamus te, omnis immundus spiritus, omnis satanica potestas, omnis incursio infernalis adversarii, omnis legio, omnis congregatio et secta diabolica, in nomine et virtute Domini Nostri Jesu Christi!")}
 };

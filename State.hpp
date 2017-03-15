@@ -31,16 +31,18 @@ public:
     void setIsVampire();
     virtual ~State();
 
-    void isAlive();
+    bool isAlive();
     void setHpmax(double hpmax);
 
     void setHP(double d);
 
     void addHP(double hp);
+    void deductHP(double hp);
 
     bool getIsWerewolf();
 
     void setIsWerewolf();
+
 
 
 };

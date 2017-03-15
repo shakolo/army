@@ -24,29 +24,29 @@ int main() {
     Berserker* ivar = new Berserker("Ivar");
     Priest* kostya = new Priest("Konstantin");
 
-    std::cout<< *caliostro << std::endl;
-    bob->fight(*caliostro);
-    std::cout<< *caliostro << std::endl;
-    caliostro->fight(*bob);
-    std::cout<< *bob << std::endl;
-
-    kostya->fight(*bob);
-    sigillum->fight(*bob);
-    std::cout<< *bob << std::endl;
+//    std::cout<< *caliostro << std::endl;
+//    bob->fight(*caliostro);
+//    std::cout<< *caliostro << std::endl;
+//    caliostro->fight(*bob);
+//    std::cout<< *bob << std::endl;
+//
+//    kostya->fight(*bob);
+//    sigillum->fight(*bob);
+//    std::cout<< *bob << std::endl;
 ////    sigillum->cast(*bob, "AVADAKEDAVRA");
 ////    std::cout<< *bob << std::endl;
 ////    sigillum->cast(*bob, "FIREBALL");
 ////    std::cout<< *bob << std::endl;
 //
 ////
-    sigillum->callDemon("demon1");
+//    sigillum->callDemon("demon1");
 ////    sigillum->callDemon("demon2");
 ////    std::cout << *sigillum->getDemon("demon1") << std::endl;
-    sigillum->getDemon("demon1")->possession(*bob);
-    std::cout<< *bob << std::endl;
-    drakula->fight(*bob);
-    std::cout<< *bob << std::endl;
-    std::cout<< *caliostro << std::endl;
+//    sigillum->getDemon("demon1")->possession(*bob);
+//    std::cout<< *bob << std::endl;
+//    drakula->fight(*bob);
+//    std::cout<< *bob << std::endl;
+//    std::cout<< *caliostro << std::endl;
 //    sigillum->getDemon("demon2")->fight(*bob);
 //    std::cout<< *bob << std::endl;
 //    sigillum->getDemon("demon2")->fight(*bob);
@@ -80,12 +80,19 @@ int main() {
 //    std::cout<< *bob << std::endl;
 //    lupin->bite(*bob);
 //    std::cout<< *bob  << std::endl;
-//    bob->transform();
-//    gendalf->cast(*bob, "FIREBALL");
-//    std::cout<< *bob  << std::endl;
+    bob->transform();
+    gendalf->cast(*bob, "FIREBALL");
+    std::cout<< *bob  << std::endl;
+
+    gendalf->cast(*bob, "FIREBALL");
+    std::cout<< *bob  << std::endl;
+
+    gendalf->cast(*bob, "FIREBALL");
+    std::cout<< *bob  << std::endl;
+
 //
-//    avicenna->cast(*bob, "AVADAKEDAVRA");
-//    std::cout<< *bob  << std::endl;
+    avicenna->cast(*bob, "AVADAKEDAVRA");
+    std::cout<< *bob  << std::endl;
 //
 //    bob->transform();
 //    std::cout<< *bob << std::endl;
